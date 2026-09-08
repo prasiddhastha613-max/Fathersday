@@ -30,9 +30,9 @@
     </div>
 
 
-    <!-- =====================================
+    <!-- =========================
          OPENING SCREEN
-         ===================================== -->
+         ========================= -->
 
     <section id="openingScreen" class="opening-screen">
 
@@ -59,7 +59,9 @@
                 तपाईंले यो खोल्नै पर्छ...
             </p>
 
-            <button id="surpriseButton" onclick="openSurprise()">
+            <button
+                id="surpriseButton"
+                onclick="openSurprise()">
                 SURPRISE खोल्नुहोस् ❤️
             </button>
 
@@ -68,9 +70,9 @@
     </section>
 
 
-    <!-- =====================================
+    <!-- =========================
          SECOND PAGE
-         ===================================== -->
+         ========================= -->
 
     <section id="surprisePage" class="surprise-page">
 
@@ -90,28 +92,17 @@
             </p>
 
 
-            <!-- =====================================
-                 PHOTO 1
-                 ===================================== -->
-
+            <!-- PHOTO 1 -->
             <div class="memory reveal">
 
-                <div class="polaroid">
+                <div class="polaroid interactive-polaroid">
 
                     <div class="photo-placeholder">
-
-                        <div class="camera">
-                            📷
-                        </div>
-
-                        <div class="photo-number">
-                            PHOTO 1
-                        </div>
-
+                        <div class="camera">📷</div>
+                        <div class="photo-number">PHOTO 1</div>
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
-
                     </div>
 
                     <div class="caption">
@@ -129,28 +120,17 @@
             </div>
 
 
-            <!-- =====================================
-                 PHOTO 2
-                 ===================================== -->
-
+            <!-- PHOTO 2 -->
             <div class="memory reveal">
 
-                <div class="polaroid rotate-left">
+                <div class="polaroid interactive-polaroid rotate-left">
 
                     <div class="photo-placeholder">
-
-                        <div class="camera">
-                            📷
-                        </div>
-
-                        <div class="photo-number">
-                            PHOTO 2
-                        </div>
-
+                        <div class="camera">📷</div>
+                        <div class="photo-number">PHOTO 2</div>
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
-
                     </div>
 
                     <div class="caption">
@@ -168,28 +148,17 @@
             </div>
 
 
-            <!-- =====================================
-                 PHOTO 3
-                 ===================================== -->
-
+            <!-- PHOTO 3 -->
             <div class="memory reveal">
 
-                <div class="polaroid rotate-right">
+                <div class="polaroid interactive-polaroid rotate-right">
 
                     <div class="photo-placeholder">
-
-                        <div class="camera">
-                            📷
-                        </div>
-
-                        <div class="photo-number">
-                            PHOTO 3
-                        </div>
-
+                        <div class="camera">📷</div>
+                        <div class="photo-number">PHOTO 3</div>
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
-
                     </div>
 
                     <div class="caption">
@@ -207,28 +176,17 @@
             </div>
 
 
-            <!-- =====================================
-                 PHOTO 4
-                 ===================================== -->
-
+            <!-- PHOTO 4 -->
             <div class="memory reveal">
 
-                <div class="polaroid">
+                <div class="polaroid interactive-polaroid">
 
                     <div class="photo-placeholder">
-
-                        <div class="camera">
-                            📷
-                        </div>
-
-                        <div class="photo-number">
-                            PHOTO 4
-                        </div>
-
+                        <div class="camera">📷</div>
+                        <div class="photo-number">PHOTO 4</div>
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
-
                     </div>
 
                     <div class="caption">
@@ -246,28 +204,17 @@
             </div>
 
 
-            <!-- =====================================
-                 PHOTO 5
-                 ===================================== -->
-
+            <!-- PHOTO 5 -->
             <div class="memory reveal">
 
-                <div class="polaroid rotate-left">
+                <div class="polaroid interactive-polaroid rotate-left">
 
                     <div class="photo-placeholder">
-
-                        <div class="camera">
-                            📷
-                        </div>
-
-                        <div class="photo-number">
-                            PHOTO 5
-                        </div>
-
+                        <div class="camera">📷</div>
+                        <div class="photo-number">PHOTO 5</div>
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
-
                     </div>
 
                     <div class="caption">
@@ -284,10 +231,7 @@
             </div>
 
 
-            <!-- =====================================
-                 FINAL MESSAGE
-                 ===================================== -->
-
+            <!-- FINAL -->
             <div class="final-card reveal">
 
                 <div class="final-heart">
@@ -323,15 +267,11 @@
     </section>
 
 
-    <!-- =====================================
-         JAVASCRIPT
-         ===================================== -->
-
     <script>
 
-        /* =====================================
-           SURPRISE BUTTON PARTICLE BURST
-           ===================================== */
+        /* =========================
+           SURPRISE PARTICLE BURST
+           ========================= */
 
         function createBurst() {
 
@@ -379,19 +319,15 @@
                 );
 
                 setTimeout(function () {
-
                     particle.remove();
-
                 }, 1000);
-
             }
-
         }
 
 
-        /* =====================================
+        /* =========================
            OPEN SURPRISE
-           ===================================== */
+           ========================= */
 
         function openSurprise() {
 
@@ -410,14 +346,11 @@
                     "surpriseButton"
                 );
 
-
             button.classList.add(
                 "button-clicked"
             );
 
-
             createBurst();
-
 
             setTimeout(function () {
 
@@ -426,7 +359,6 @@
                 );
 
             }, 120);
-
 
             setTimeout(function () {
 
@@ -444,19 +376,17 @@
                 });
 
             }, 700);
-
         }
 
 
-        /* =====================================
+        /* =========================
            SCROLL REVEAL
-           ===================================== */
+           ========================= */
 
         const revealItems =
             document.querySelectorAll(
                 ".reveal"
             );
-
 
         const observer =
             new IntersectionObserver(
@@ -488,17 +418,112 @@
                 {
                     threshold: 0.12
                 }
-
             );
 
 
         revealItems.forEach(
             function(item) {
-
                 observer.observe(item);
-
             }
         );
+
+
+        /* =========================
+           INTERACTIVE POLAROIDS
+           ========================= */
+
+        const polaroids =
+            document.querySelectorAll(
+                ".interactive-polaroid"
+            );
+
+
+        polaroids.forEach(function(card) {
+
+            let baseRotation = 0;
+
+            if (card.classList.contains("rotate-left")) {
+                baseRotation = -3;
+            }
+
+            if (card.classList.contains("rotate-right")) {
+                baseRotation = 3;
+            }
+
+
+            card.addEventListener(
+                "pointermove",
+                function(event) {
+
+                    /*
+                     * Calculate where the cursor is
+                     * inside the Polaroid.
+                     */
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const x =
+                        event.clientX - rect.left;
+
+                    const y =
+                        event.clientY - rect.top;
+
+                    const centerX =
+                        rect.width / 2;
+
+                    const centerY =
+                        rect.height / 2;
+
+                    /*
+                     * -1 = far left
+                     *  0 = center
+                     *  1 = far right
+                     */
+
+                    const moveX =
+                        (x - centerX) /
+                        centerX;
+
+                    const moveY =
+                        (y - centerY) /
+                        centerY;
+
+                    /*
+                     * Very small values keep it
+                     * elegant instead of crazy.
+                     */
+
+                    const rotate =
+                        baseRotation +
+                        moveX * 7;
+
+                    const lift =
+                        -5 -
+                        Math.abs(moveY) * 3;
+
+                    const scale =
+                        1.035;
+
+                    card.style.transform =
+                        `translateY(${lift}px)
+                         rotate(${rotate}deg)
+                         scale(${scale})`;
+                }
+            );
+
+
+            card.addEventListener(
+                "pointerleave",
+                function() {
+
+                    card.style.transform =
+                        `rotate(${baseRotation}deg)
+                         scale(1)`;
+                }
+            );
+
+        });
 
     </script>
 
