@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ne">
 <head>
@@ -65,7 +64,7 @@
 
 
     <!-- =========================
-         SECOND SCREEN
+         SECOND PAGE
          ========================= -->
 
     <section id="surprisePage" class="surprise-page">
@@ -85,6 +84,7 @@
 
 
             <!-- PHOTO 1 -->
+
             <section class="memory reveal">
 
                 <div class="polaroid">
@@ -111,6 +111,7 @@
 
 
             <!-- PHOTO 2 -->
+
             <section class="memory reveal">
 
                 <div class="polaroid tilted-left">
@@ -137,6 +138,7 @@
 
 
             <!-- PHOTO 3 -->
+
             <section class="memory reveal">
 
                 <div class="polaroid tilted-right">
@@ -163,6 +165,7 @@
 
 
             <!-- PHOTO 4 -->
+
             <section class="memory reveal">
 
                 <div class="polaroid">
@@ -189,6 +192,7 @@
 
 
             <!-- PHOTO 5 -->
+
             <section class="memory reveal">
 
                 <div class="polaroid tilted-left">
@@ -214,6 +218,7 @@
 
 
             <!-- FINAL MESSAGE -->
+
             <section class="final-card reveal">
 
                 <div class="final-heart">
@@ -251,34 +256,18 @@
 
     <script>
 
-        /* =========================
-           SURPRISE PARTICLES
-           ========================= */
-
         function createBurst() {
 
-            const symbols = [
-                "❤️",
-                "♡",
-                "✦",
-                "✧",
-                "✨"
-            ];
+            const symbols = ["❤️", "♡", "✦", "✧", "✨"];
 
-            for (let i = 0; i < 22; i++) {
+            for (let i = 20; i > 0; i--) {
 
-                const particle =
-                    document.createElement("span");
+                const particle = document.createElement("span");
 
-                particle.className =
-                    "burst-particle";
+                particle.className = "burst-particle";
 
                 particle.textContent =
-                    symbols[
-                        Math.floor(
-                            Math.random() * symbols.length
-                        )
-                    ];
+                    symbols[Math.floor(Math.random() * symbols.length)];
 
                 particle.style.setProperty(
                     "--x",
@@ -292,21 +281,17 @@
 
                 particle.style.setProperty(
                     "--r",
-                    (Math.random() * 220 - 110) + "deg"
+                    (Math.random() * 240 - 120) + "deg"
                 );
 
                 document.body.appendChild(particle);
 
                 setTimeout(function () {
                     particle.remove();
-                }, 1100);
+                }, 1000);
             }
         }
 
-
-        /* =========================
-           OPEN SURPRISE
-           ========================= */
 
         function openSurprise() {
 
@@ -342,11 +327,9 @@
         }
 
 
-        /* =========================
-           SCROLL REVEAL
-           ========================= */
+        /* SCROLL REVEAL */
 
-        const revealElements =
+        const revealItems =
             document.querySelectorAll(".reveal");
 
         const observer =
@@ -371,12 +354,11 @@
             );
 
 
-        revealElements.forEach(function(element) {
-            observer.observe(element);
+        revealItems.forEach(function(item) {
+            observer.observe(item);
         });
 
     </script>
 
 </body>
 </html>
-```
