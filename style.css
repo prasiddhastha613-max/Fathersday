@@ -1,4 +1,3 @@
-```css
 /* =========================
    RESET
    ========================= */
@@ -17,6 +16,7 @@ body {
     margin: 0;
     padding: 0;
 
+    width: 100%;
     min-height: 100vh;
 
     font-family:
@@ -25,15 +25,15 @@ body {
         Arial,
         sans-serif;
 
-    color: white;
-
     background:
         linear-gradient(
             180deg,
             #140a10,
-            #24111b,
+            #25121c,
             #140a10
         );
+
+    color: white;
 
     overflow-x: hidden;
 }
@@ -44,7 +44,6 @@ body {
    ========================= */
 
 .side-decoration {
-
     position: fixed;
 
     top: 0;
@@ -53,11 +52,9 @@ body {
     width: 55px;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: space-around;
-
     align-items: center;
 
     pointer-events: none;
@@ -76,7 +73,6 @@ body {
 }
 
 .side-decoration span {
-
     font-family: Georgia, serif;
 
     font-size: 20px;
@@ -148,12 +144,14 @@ body {
             #140a10 100%
         );
 
+    opacity: 1;
+
     transition:
         opacity 0.65s ease;
 }
 
 
-/* Small background decorations */
+/* Background sparkle */
 
 .opening-screen::before {
 
@@ -161,10 +159,10 @@ body {
 
     position: absolute;
 
-    left: 16%;
-    top: 14%;
+    top: 13%;
+    left: 18%;
 
-    font-size: 20px;
+    font-size: 22px;
 
     opacity: 0.25;
 
@@ -178,10 +176,10 @@ body {
 
     position: absolute;
 
-    right: 16%;
-    bottom: 14%;
+    right: 18%;
+    bottom: 13%;
 
-    font-size: 22px;
+    font-size: 23px;
 
     opacity: 0.22;
 
@@ -237,10 +235,10 @@ body {
 
     text-align: center;
 
-    border-radius: 30px;
-
     border:
         1px solid rgba(255,255,255,0.15);
+
+    border-radius: 30px;
 
     background:
         rgba(255,255,255,0.075);
@@ -252,7 +250,7 @@ body {
         blur(14px);
 
     animation:
-        openingEnter 1.05s ease both;
+        openingEnter 1s ease both;
 }
 
 @keyframes openingEnter {
@@ -276,7 +274,7 @@ body {
 
 
 /* =========================
-   HEART
+   OPENING HEART
    ========================= */
 
 .opening-heart {
@@ -286,10 +284,10 @@ body {
     margin-bottom: 12px;
 
     animation:
-        heartbeat 1.6s ease-in-out infinite;
+        heartBeat 1.6s ease-in-out infinite;
 }
 
-@keyframes heartbeat {
+@keyframes heartBeat {
 
     0%, 100% {
         transform: scale(1);
@@ -358,18 +356,22 @@ body {
 
     from {
         opacity: 0;
-        transform: translateY(18px);
+
+        transform:
+            translateY(18px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
 
 /* =========================
-   BUTTON
+   SURPRISE BUTTON
    ========================= */
 
 .opening-card button {
@@ -390,7 +392,7 @@ body {
 
     border-radius: 999px;
 
-    background: #ffffff;
+    background: white;
 
     color: #351522;
 
@@ -435,19 +437,37 @@ body {
         skewX(-20deg);
 
     animation:
-        shine 3s ease-in-out infinite;
+        buttonShine 3s ease-in-out infinite;
+}
+
+.opening-card button:hover {
+    transform:
+        translateY(-3px)
+        scale(1.01);
+}
+
+.opening-card button:active {
+    transform: scale(0.95);
+}
+
+.clicked {
+    transform: scale(0.88) !important;
 }
 
 @keyframes buttonAppear {
 
     from {
         opacity: 0;
-        transform: translateY(18px);
+
+        transform:
+            translateY(18px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -464,7 +484,7 @@ body {
     }
 }
 
-@keyframes shine {
+@keyframes buttonShine {
 
     0%, 55% {
         left: -120%;
@@ -475,25 +495,9 @@ body {
     }
 }
 
-.opening-card button:hover {
-    transform: translateY(-3px) scale(1.01);
-}
-
-.opening-card button:active {
-    transform: scale(0.94);
-}
-
-.clicked {
-    transform:
-        scale(0.88) !important;
-
-    box-shadow:
-        0 0 55px rgba(255,255,255,0.7) !important;
-}
-
 
 /* =========================
-   BURST
+   SURPRISE PARTICLES
    ========================= */
 
 .burst-particle {
@@ -503,14 +507,14 @@ body {
     left: 50%;
     top: 50%;
 
-    z-index: 1000;
-
-    font-size: 19px;
+    z-index: 2000;
 
     pointer-events: none;
 
+    font-size: 19px;
+
     animation:
-        burst 1.05s ease-out forwards;
+        burst 1s ease-out forwards;
 }
 
 @keyframes burst {
@@ -589,12 +593,16 @@ body {
 
     from {
         opacity: 0;
-        transform: translateY(20px);
+
+        transform:
+            translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -621,7 +629,7 @@ body {
     margin-bottom: 10px;
 
     animation:
-        heartbeat 1.8s ease-in-out infinite;
+        heartBeat 1.8s ease-in-out infinite;
 }
 
 .content > h2 {
@@ -716,7 +724,7 @@ body {
 
 
 /* =========================
-   POLAROID
+   POLAROIDS
    ========================= */
 
 .polaroid {
@@ -738,21 +746,18 @@ body {
     box-shadow:
         0 20px 38px rgba(0,0,0,0.38);
 
+    cursor: pointer;
+
     transform-origin:
         center center;
 
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-
-    cursor: pointer;
-
-    will-change:
-        transform;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
-/* Normal tilted positions */
+/* Normal tilt */
 
 .tilted-left {
     transform: rotate(-3deg);
@@ -763,96 +768,80 @@ body {
 }
 
 
-/* =========================
-   HOVER SWAY
-   ========================= */
+/* Hover:
+   slightly bigger + smooth sway */
 
 .polaroid:hover {
 
-    transform:
-        scale(1.045)
-        rotate(-4deg);
+    animation:
+        polaroidSway 1.4s ease-in-out infinite;
 
     box-shadow:
-        0 30px 55px rgba(0,0,0,0.5);
+        0 30px 52px rgba(0,0,0,0.5);
 
-    animation:
-        gentleSway 1.2s ease-in-out infinite;
+    position: relative;
+
+    z-index: 5;
+}
+
+@keyframes polaroidSway {
+
+    0%, 100% {
+        transform:
+            scale(1.035)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            scale(1.045)
+            rotate(3deg);
+    }
 }
 
 
+/* Tilted cards */
+
 .tilted-left:hover {
 
-    transform:
-        scale(1.045)
-        rotate(-5deg);
-
     animation:
-        leftSway 1.2s ease-in-out infinite;
+        polaroidLeftSway 1.4s ease-in-out infinite;
+}
+
+@keyframes polaroidLeftSway {
+
+    0%, 100% {
+        transform:
+            scale(1.035)
+            rotate(-6deg);
+    }
+
+    50% {
+        transform:
+            scale(1.045)
+            rotate(2deg);
+    }
 }
 
 
 .tilted-right:hover {
 
-    transform:
-        scale(1.045)
-        rotate(5deg);
-
     animation:
-        rightSway 1.2s ease-in-out infinite;
+        polaroidRightSway 1.4s ease-in-out infinite;
 }
 
-
-/* Main sway */
-
-@keyframes gentleSway {
+@keyframes polaroidRightSway {
 
     0%, 100% {
         transform:
-            scale(1.045)
-            rotate(-4deg);
+            scale(1.035)
+            rotate(6deg);
     }
 
     50% {
         transform:
             scale(1.045)
-            rotate(4deg);
-    }
-}
-
-
-/* Left card sway */
-
-@keyframes leftSway {
-
-    0%, 100% {
-        transform:
-            scale(1.045)
-            rotate(-5deg);
-    }
-
-    50% {
-        transform:
-            scale(1.045)
-            rotate(4deg);
-    }
-}
-
-
-/* Right card sway */
-
-@keyframes rightSway {
-
-    0%, 100% {
-        transform:
-            scale(1.045)
-            rotate(5deg);
-    }
-
-    50% {
-        transform:
-            scale(1.045)
-            rotate(-4deg);
+            rotate(-2deg);
     }
 }
 
@@ -887,13 +876,6 @@ body {
         2px dashed #999097;
 
     color: #584b52;
-
-    transition:
-        transform 0.3s ease;
-}
-
-.polaroid:hover .photo-placeholder {
-    transform: scale(1.01);
 }
 
 .camera {
@@ -955,9 +937,6 @@ body {
 
     box-shadow:
         0 20px 45px rgba(0,0,0,0.4);
-
-    animation:
-        finalGlow 4s ease-in-out infinite;
 }
 
 .final-heart {
@@ -967,7 +946,7 @@ body {
     margin-bottom: 8px;
 
     animation:
-        heartbeat 1.5s ease-in-out infinite;
+        heartBeat 1.5s ease-in-out infinite;
 }
 
 .final-card h2 {
@@ -1010,19 +989,6 @@ body {
     font-size: 14px;
 
     opacity: 0.6;
-}
-
-@keyframes finalGlow {
-
-    0%, 100% {
-        box-shadow:
-            0 20px 45px rgba(0,0,0,0.4);
-    }
-
-    50% {
-        box-shadow:
-            0 20px 60px rgba(105,45,78,0.3);
-    }
 }
 
 
@@ -1090,4 +1056,3 @@ body {
         font-size: 20px;
     }
 }
-```
