@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, "Noto Sans Devanagari", sans-serif;
+    background: linear-gradient(135deg, #24104f, #6b246d, #b84d6b);
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+.card {
+    padding: 40px 28px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.emoji {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s infinite;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    margin-top: 25px;
+    font-size: 25px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+.small {
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 28px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 999px;
+    background: white;
+    color: #7a285f;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button:hover {
+    transform: scale(1.06);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 260px;
+    margin-top: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 32px 22px;
+    }
+
+    h1 {
+        font-size: 31px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+}
