@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Happy Father's Day ❤️</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- SIDE DECORATIONS -->
-    <div class="side-decoration left-decoration" aria-hidden="true">
+    <div class="side-decoration left-decoration">
         <span>✦</span>
         <span>♡</span>
         <span>✧</span>
@@ -21,7 +19,7 @@
         <span>✦</span>
     </div>
 
-    <div class="side-decoration right-decoration" aria-hidden="true">
+    <div class="side-decoration right-decoration">
         <span>♡</span>
         <span>✧</span>
         <span>✦</span>
@@ -31,16 +29,14 @@
 
 
     <!-- =========================
-         OPENING SCREEN
+         FIRST SCREEN
          ========================= -->
 
     <section id="openingScreen" class="opening-screen">
 
-        <div class="opening-inner">
+        <div class="opening-card">
 
-            <div class="opening-heart">
-                ❤️
-            </div>
+            <div class="opening-heart">❤️</div>
 
             <div class="english-title">
                 Happy Father's Day
@@ -55,13 +51,11 @@
                 तपाईंका लागि एउटा सानो सरप्राइज छ ❤️
             </h1>
 
-            <p>
+            <p class="opening-text">
                 तपाईंले यो खोल्नै पर्छ...
             </p>
 
-            <button
-                id="surpriseButton"
-                onclick="openSurprise()">
+            <button id="surpriseButton" onclick="openSurprise()">
                 SURPRISE खोल्नुहोस् ❤️
             </button>
 
@@ -71,16 +65,14 @@
 
 
     <!-- =========================
-         SECOND PAGE
+         SECOND SCREEN
          ========================= -->
 
     <section id="surprisePage" class="surprise-page">
 
         <div class="content">
 
-            <div class="top-icon">
-                ❤️
-            </div>
+            <div class="top-heart">❤️</div>
 
             <h2>
                 बुबा, यो तपाईंको लागि हो
@@ -88,21 +80,19 @@
 
             <p class="intro-message">
                 तपाईंको लागि तयार गरेको केही सम्झना
-                र केही शब्दहरू...
+                र केही मनका शब्दहरू...
             </p>
 
 
             <!-- PHOTO 1 -->
-            <div class="memory reveal">
+            <section class="memory reveal">
 
-                <div class="polaroid interactive-polaroid">
+                <div class="polaroid">
 
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 1</div>
-                        <div class="photo-note">
-                            फोटो यहाँ राख्नुहोस्
-                        </div>
+                        <strong>PHOTO 1</strong>
+                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
                     </div>
 
                     <div class="caption">
@@ -117,24 +107,22 @@
                     धेरै धेरै धन्यवाद भन्न चाहन्छु।
                 </p>
 
-            </div>
+            </section>
 
 
             <!-- PHOTO 2 -->
-            <div class="memory reveal">
+            <section class="memory reveal">
 
-                <div class="polaroid interactive-polaroid rotate-left">
+                <div class="polaroid tilted-left">
 
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 2</div>
-                        <div class="photo-note">
-                            फोटो यहाँ राख्नुहोस्
-                        </div>
+                        <strong>PHOTO 2</strong>
+                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
                     </div>
 
                     <div class="caption">
-                        हाम्रो अर्को सम्झना ❤️
+                        हाम्रो अर्को मिठो सम्झना ❤️
                     </div>
 
                 </div>
@@ -145,20 +133,18 @@
                     सिकाउनुभएको छ।
                 </p>
 
-            </div>
+            </section>
 
 
             <!-- PHOTO 3 -->
-            <div class="memory reveal">
+            <section class="memory reveal">
 
-                <div class="polaroid interactive-polaroid rotate-right">
+                <div class="polaroid tilted-right">
 
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 3</div>
-                        <div class="photo-note">
-                            फोटो यहाँ राख्नुहोस्
-                        </div>
+                        <strong>PHOTO 3</strong>
+                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
                     </div>
 
                     <div class="caption">
@@ -173,20 +159,18 @@
                     सधैं राम्रो सोचिरहनुभएको हुन्छ।
                 </p>
 
-            </div>
+            </section>
 
 
             <!-- PHOTO 4 -->
-            <div class="memory reveal">
+            <section class="memory reveal">
 
-                <div class="polaroid interactive-polaroid">
+                <div class="polaroid">
 
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 4</div>
-                        <div class="photo-note">
-                            फोटो यहाँ राख्नुहोस्
-                        </div>
+                        <strong>PHOTO 4</strong>
+                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
                     </div>
 
                     <div class="caption">
@@ -201,20 +185,18 @@
                     हुनुहुन्छ।
                 </p>
 
-            </div>
+            </section>
 
 
             <!-- PHOTO 5 -->
-            <div class="memory reveal">
+            <section class="memory reveal">
 
-                <div class="polaroid interactive-polaroid rotate-left">
+                <div class="polaroid tilted-left">
 
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 5</div>
-                        <div class="photo-note">
-                            फोटो यहाँ राख्नुहोस्
-                        </div>
+                        <strong>PHOTO 5</strong>
+                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
                     </div>
 
                     <div class="caption">
@@ -228,11 +210,11 @@
                     साथ र हौसलाको कुनै मूल्य छैन।
                 </p>
 
-            </div>
+            </section>
 
 
-            <!-- FINAL -->
-            <div class="final-card reveal">
+            <!-- FINAL MESSAGE -->
+            <section class="final-card reveal">
 
                 <div class="final-heart">
                     ❤️
@@ -260,7 +242,7 @@
                     तपाईंको छोराबाट ❤️
                 </div>
 
-            </div>
+            </section>
 
         </div>
 
@@ -270,7 +252,7 @@
     <script>
 
         /* =========================
-           SURPRISE PARTICLE BURST
+           SURPRISE PARTICLES
            ========================= */
 
         function createBurst() {
@@ -283,7 +265,7 @@
                 "✨"
             ];
 
-            for (let i = 0; i < 18; i++) {
+            for (let i = 0; i < 22; i++) {
 
                 const particle =
                     document.createElement("span");
@@ -294,33 +276,30 @@
                 particle.textContent =
                     symbols[
                         Math.floor(
-                            Math.random() *
-                            symbols.length
+                            Math.random() * symbols.length
                         )
                     ];
 
                 particle.style.setProperty(
                     "--x",
-                    (Math.random() * 280 - 140) + "px"
+                    (Math.random() * 320 - 160) + "px"
                 );
 
                 particle.style.setProperty(
                     "--y",
-                    (Math.random() * 220 - 110) + "px"
+                    (Math.random() * 260 - 130) + "px"
                 );
 
                 particle.style.setProperty(
                     "--r",
-                    (Math.random() * 180 - 90) + "deg"
+                    (Math.random() * 220 - 110) + "deg"
                 );
 
-                document.body.appendChild(
-                    particle
-                );
+                document.body.appendChild(particle);
 
                 setTimeout(function () {
                     particle.remove();
-                }, 1000);
+                }, 1100);
             }
         }
 
@@ -332,47 +311,31 @@
         function openSurprise() {
 
             const opening =
-                document.getElementById(
-                    "openingScreen"
-                );
+                document.getElementById("openingScreen");
 
-            const surprise =
-                document.getElementById(
-                    "surprisePage"
-                );
+            const page =
+                document.getElementById("surprisePage");
 
             const button =
-                document.getElementById(
-                    "surpriseButton"
-                );
+                document.getElementById("surpriseButton");
 
-            button.classList.add(
-                "button-clicked"
-            );
+            button.classList.add("clicked");
 
             createBurst();
 
             setTimeout(function () {
-
-                opening.classList.add(
-                    "hide-opening"
-                );
-
-            }, 120);
+                opening.classList.add("hide");
+            }, 150);
 
             setTimeout(function () {
 
-                opening.style.display =
-                    "none";
+                opening.style.display = "none";
 
-                surprise.classList.add(
-                    "show-page"
-                );
+                page.classList.add("show");
 
                 window.scrollTo({
                     top: 0,
-                    left: 0,
-                    behavior: "instant"
+                    left: 0
                 });
 
             }, 700);
@@ -383,146 +346,33 @@
            SCROLL REVEAL
            ========================= */
 
-        const revealItems =
-            document.querySelectorAll(
-                ".reveal"
-            );
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
         const observer =
             new IntersectionObserver(
-
                 function(entries) {
 
-                    entries.forEach(
-                        function(entry) {
+                    entries.forEach(function(entry) {
 
-                            if (
-                                entry.isIntersecting
-                            ) {
+                        if (entry.isIntersecting) {
 
-                                entry.target.classList.add(
-                                    "visible"
-                                );
+                            entry.target.classList.add("visible");
 
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-
+                            observer.unobserve(entry.target);
                         }
-                    );
+
+                    });
 
                 },
-
                 {
                     threshold: 0.12
                 }
             );
 
 
-        revealItems.forEach(
-            function(item) {
-                observer.observe(item);
-            }
-        );
-
-
-        /* =========================
-           INTERACTIVE POLAROIDS
-           ========================= */
-
-        const polaroids =
-            document.querySelectorAll(
-                ".interactive-polaroid"
-            );
-
-
-        polaroids.forEach(function(card) {
-
-            let baseRotation = 0;
-
-            if (card.classList.contains("rotate-left")) {
-                baseRotation = -3;
-            }
-
-            if (card.classList.contains("rotate-right")) {
-                baseRotation = 3;
-            }
-
-
-            card.addEventListener(
-                "pointermove",
-                function(event) {
-
-                    /*
-                     * Calculate where the cursor is
-                     * inside the Polaroid.
-                     */
-
-                    const rect =
-                        card.getBoundingClientRect();
-
-                    const x =
-                        event.clientX - rect.left;
-
-                    const y =
-                        event.clientY - rect.top;
-
-                    const centerX =
-                        rect.width / 2;
-
-                    const centerY =
-                        rect.height / 2;
-
-                    /*
-                     * -1 = far left
-                     *  0 = center
-                     *  1 = far right
-                     */
-
-                    const moveX =
-                        (x - centerX) /
-                        centerX;
-
-                    const moveY =
-                        (y - centerY) /
-                        centerY;
-
-                    /*
-                     * Very small values keep it
-                     * elegant instead of crazy.
-                     */
-
-                    const rotate =
-                        baseRotation +
-                        moveX * 7;
-
-                    const lift =
-                        -5 -
-                        Math.abs(moveY) * 3;
-
-                    const scale =
-                        1.035;
-
-                    card.style.transform =
-                        `translateY(${lift}px)
-                         rotate(${rotate}deg)
-                         scale(${scale})`;
-                }
-            );
-
-
-            card.addEventListener(
-                "pointerleave",
-                function() {
-
-                    card.style.transform =
-                        `rotate(${baseRotation}deg)
-                         scale(1)`;
-                }
-            );
-
+        revealElements.forEach(function(element) {
+            observer.observe(element);
         });
 
     </script>
