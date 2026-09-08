@@ -10,8 +10,26 @@
 
 <body>
 
+    <!-- SIDE DECORATIONS -->
+    <div class="side-decoration left-decoration" aria-hidden="true">
+        <span>✦</span>
+        <span>♡</span>
+        <span>✧</span>
+        <span>♡</span>
+        <span>✦</span>
+    </div>
+
+    <div class="side-decoration right-decoration" aria-hidden="true">
+        <span>♡</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>♡</span>
+        <span>✧</span>
+    </div>
+
+
     <!-- =========================
-         SEPARATE OPENING SCREEN
+         OPENING SCREEN
          ========================= -->
     <section id="openingScreen" class="opening-screen">
 
@@ -36,7 +54,7 @@
                 तपाईंले यो खोल्नै पर्छ...
             </p>
 
-            <button onclick="openSurprise()">
+            <button id="surpriseButton" onclick="openSurprise()">
                 SURPRISE खोल्नुहोस् ❤️
             </button>
 
@@ -46,7 +64,7 @@
 
 
     <!-- =========================
-         SEPARATE SECOND PAGE
+         SECOND PAGE
          ========================= -->
     <section id="surprisePage" class="surprise-page">
 
@@ -69,7 +87,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 1</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -95,7 +115,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 2</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -121,7 +143,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 3</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -147,7 +171,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 4</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -173,7 +199,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 5</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -193,7 +221,9 @@
             <!-- FINAL -->
             <div class="final-card reveal">
 
-                <div class="final-heart">❤️</div>
+                <div class="final-heart">
+                    ❤️
+                </div>
 
                 <h2>बुबा...</h2>
 
@@ -222,7 +252,47 @@
     </section>
 
 
+    <!-- =========================
+         SCRIPT
+         ========================= -->
     <script>
+
+        function createBurst() {
+
+            const symbols = ["❤️", "♡", "✦", "✧", "✨"];
+
+            for (let i = 0; i < 18; i++) {
+
+                const particle = document.createElement("span");
+
+                particle.className = "burst-particle";
+
+                particle.textContent =
+                    symbols[Math.floor(Math.random() * symbols.length)];
+
+                particle.style.setProperty(
+                    "--x",
+                    (Math.random() * 280 - 140) + "px"
+                );
+
+                particle.style.setProperty(
+                    "--y",
+                    (Math.random() * 220 - 110) + "px"
+                );
+
+                particle.style.setProperty(
+                    "--r",
+                    (Math.random() * 180 - 90) + "deg"
+                );
+
+                document.body.appendChild(particle);
+
+                setTimeout(function () {
+                    particle.remove();
+                }, 1000);
+            }
+        }
+
 
         function openSurprise() {
 
@@ -232,15 +302,30 @@
             const surprise =
                 document.getElementById("surprisePage");
 
-            opening.classList.add("hide-opening");
+            const button =
+                document.getElementById("surpriseButton");
 
+
+            /* Small click animation */
+            button.classList.add("button-clicked");
+
+            createBurst();
+
+
+            /* Fade opening away */
+            setTimeout(function () {
+
+                opening.classList.add("hide-opening");
+
+            }, 120);
+
+
+            /* Reveal second page */
             setTimeout(function () {
 
                 opening.style.display = "none";
 
                 surprise.classList.add("show-page");
-
-                document.body.classList.add("scroll-enabled");
 
                 window.scrollTo({
                     top: 0,
@@ -248,16 +333,17 @@
                     behavior: "instant"
                 });
 
-            }, 650);
+            }, 700);
         }
 
 
         /* =========================
-           SCROLL REVEAL ANIMATION
+           SCROLL REVEALS
            ========================= */
 
         const revealItems =
             document.querySelectorAll(".reveal");
+
 
         const observer =
             new IntersectionObserver(
@@ -271,6 +357,7 @@
                             entry.target.classList.add("visible");
 
                             observer.unobserve(entry.target);
+
                         }
 
                     });
@@ -278,13 +365,15 @@
                 },
 
                 {
-                    threshold: 0.15
+                    threshold: 0.12
                 }
             );
 
 
         revealItems.forEach(function(item) {
+
             observer.observe(item);
+
         });
 
     </script>
