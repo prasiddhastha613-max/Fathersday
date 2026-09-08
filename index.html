@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="ne">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>बुबाको लागि ❤️</title>
 
     <link rel="stylesheet" href="style.css">
@@ -10,105 +12,72 @@
 
 <body>
 
-    <div class="hearts"></div>
+    <div class="container">
 
-    <main class="container">
+        <div class="heart">❤️</div>
 
-        <!-- Opening -->
-        <section id="welcome" class="screen active">
-            <div class="card">
-                <div class="emoji">❤️</div>
+        <h1>बुबाको लागि एउटा सानो सरप्राइज</h1>
 
-                <h1>बुबाको लागि</h1>
+        <p>
+            संसारकै सबैभन्दा राम्रो बुबालाई
+            <br>
+            <strong>Happy Father's Day! ❤️</strong>
+        </p>
 
-                <p>
-                    तपाईंको लागि एउटा सानो सरप्राइज तयार गरेको छु...
-                </p>
+        <button id="surpriseButton" onclick="showSurprise()">
+            यहाँ थिच्नुहोस् ❤️
+        </button>
 
-                <button onclick="openSurprise()">
-                    सरप्राइज खोल्नुहोस् ✨
-                </button>
-            </div>
-        </section>
+        <div id="message">
 
+            <h2>बुबा, यो तपाईंको लागि ❤️</h2>
 
-        <!-- Message -->
-        <section id="message" class="screen">
-            <div class="card">
+            <p>
+                बुबा, तपाईंले मेरो लागि गर्नुभएको सबै कुराको लागि
+                म तपाईंलाई धेरै धेरै धन्यवाद भन्न चाहन्छु।
+            </p>
 
-                <div class="emoji">🥹</div>
+            <p>
+                तपाईंले मेरो भविष्य राम्रो बनाउन र
+                मलाई सधैं अगाडि बढ्न सिकाउन धेरै मेहनत गर्नुभएको छ।
+            </p>
 
-                <h1>बुबा...</h1>
+            <p>
+                कहिलेकाहीँ म तपाईंको कुरा नमाने पनि,
+                तपाईंले मेरो लागि राम्रो सोचिरहनुभएको हुन्छ भन्ने कुरा
+                म बुझ्छु। ❤️
+            </p>
 
-                <p>
-                    म सधैं शब्दमा भन्न सक्दिनँ,
-                    तर तपाईं मेरो लागि संसारकै महत्वपूर्ण
-                    मानिसहरूमध्ये एक हुनुहुन्छ।
-                </p>
+            <p>
+                तपाईं मेरो लागि केवल बुबा मात्र होइन,
+                मेरो जीवनको सबैभन्दा ठूलो प्रेरणा हुनुहुन्छ।
+            </p>
 
-                <button onclick="nextScreen('memories')">
-                    अगाडि बढ्नुहोस् ❤️
-                </button>
+            <h2>म तपाईंलाई धेरै माया गर्छु बुबा। ❤️</h2>
 
-            </div>
-        </section>
+            <p>
+                तपाईं सधैं स्वस्थ, खुसी र मुस्कुराइरहनुहोस्।
+            </p>
 
+            <p>
+                <strong>Happy Father's Day, Dad! ❤️</strong>
+            </p>
 
-        <!-- Memories -->
-        <section id="memories" class="screen">
+        </div>
 
-            <div class="card">
+        <div class="footer">
+            तपाईंको छोराबाट ❤️
+        </div>
 
-                <h1>हाम्रा सम्झनाहरू 📸</h1>
+    </div>
 
-                <p>
-                    यहाँ हाम्रा राम्रा सम्झनाहरू आउनेछन्।
-                </p>
-
-                <div class="photo-placeholder">
-                    <span>तपाईंको फोटो यहाँ हुनेछ</span>
-                </div>
-
-                <button onclick="nextScreen('final')">
-                    अझै एउटा कुरा... ❤️
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- Final -->
-        <section id="final" class="screen">
-
-            <div class="card">
-
-                <div class="emoji">❤️</div>
-
-                <h1>धन्यवाद बुबा</h1>
-
-                <p>
-                    मेरो हरेक खुसीमा,
-                    मेरो हरेक सफलतामा,
-                    र मेरो जीवनको हरेक यात्रामा
-                    साथ दिनुभएकोमा धन्यवाद।
-                </p>
-
-                <h2>
-                    Happy Father's Day, बुबा ❤️
-                </h2>
-
-                <p class="small">
-                    तपाईंलाई धेरै माया गर्छु।
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <script src="script.js"></script>
+    <script>
+        function showSurprise() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("surpriseButton").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
+```
