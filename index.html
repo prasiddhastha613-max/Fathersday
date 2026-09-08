@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Happy Father's Day ❤️</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         SEPARATE OPENING SCREEN
-         ========================= -->
+    <!-- =========================================
+         OPENING SCREEN
+         ========================================= -->
+
     <section id="openingScreen" class="opening-screen">
 
         <div class="opening-inner">
@@ -32,11 +35,13 @@
                 तपाईंका लागि एउटा सानो सरप्राइज छ ❤️
             </h1>
 
-            <p>
+            <p class="opening-note">
                 तपाईंले यो खोल्नै पर्छ...
             </p>
 
-            <button onclick="openSurprise()">
+            <button
+                class="surprise-button"
+                onclick="openSurprise()">
                 SURPRISE खोल्नुहोस् ❤️
             </button>
 
@@ -45,23 +50,28 @@
     </section>
 
 
-    <!-- =========================
-         SEPARATE SECOND PAGE
-         ========================= -->
+    <!-- =========================================
+         MAIN SURPRISE PAGE
+         ========================================= -->
+
     <section id="surprisePage" class="surprise-page">
 
         <div class="content">
 
             <div class="top-icon">❤️</div>
 
-            <h2>बुबा, यो तपाईंको लागि हो</h2>
+            <h2>
+                बुबा, यो तपाईंको लागि हो
+            </h2>
 
             <p class="intro-message">
-                तपाईंको लागि तयार गरेको केही सम्झना र केही शब्दहरू...
+                तपाईंको लागि तयार गरेको केही सम्झना
+                र केही मनका शब्दहरू...
             </p>
 
 
-            <!-- PHOTO 1 -->
+            <!-- ================= PHOTO 1 ================= -->
+
             <div class="memory">
 
                 <div class="polaroid">
@@ -69,7 +79,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 1</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो पछि यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -87,7 +99,8 @@
             </div>
 
 
-            <!-- PHOTO 2 -->
+            <!-- ================= PHOTO 2 ================= -->
+
             <div class="memory">
 
                 <div class="polaroid rotate-left">
@@ -95,11 +108,13 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 2</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो पछि यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
-                        हाम्रो अर्को सम्झना ❤️
+                        हाम्रो अर्को मिठो सम्झना ❤️
                     </div>
 
                 </div>
@@ -113,7 +128,8 @@
             </div>
 
 
-            <!-- PHOTO 3 -->
+            <!-- ================= PHOTO 3 ================= -->
+
             <div class="memory">
 
                 <div class="polaroid rotate-right">
@@ -121,7 +137,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 3</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो पछि यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -139,7 +157,8 @@
             </div>
 
 
-            <!-- PHOTO 4 -->
+            <!-- ================= PHOTO 4 ================= -->
+
             <div class="memory">
 
                 <div class="polaroid">
@@ -147,7 +166,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 4</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो पछि यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -158,14 +179,15 @@
 
                 <p>
                     तपाईं मेरो लागि केवल बुबा मात्र होइन,
-                    मेरो जीवनको सबैभन्दा ठूलो प्रेरणा
-                    हुनुहुन्छ।
+                    तपाईं मेरो जीवनको सबैभन्दा ठूलो
+                    प्रेरणा हुनुहुन्छ।
                 </p>
 
             </div>
 
 
-            <!-- PHOTO 5 -->
+            <!-- ================= PHOTO 5 ================= -->
+
             <div class="memory">
 
                 <div class="polaroid rotate-left">
@@ -173,7 +195,9 @@
                     <div class="photo-placeholder">
                         <div class="camera">📷</div>
                         <div class="photo-number">PHOTO 5</div>
-                        <div class="photo-note">फोटो यहाँ राख्नुहोस्</div>
+                        <div class="photo-note">
+                            फोटो पछि यहाँ राख्नुहोस्
+                        </div>
                     </div>
 
                     <div class="caption">
@@ -190,12 +214,19 @@
             </div>
 
 
-            <!-- FINAL -->
+            <!-- =========================================
+                 FINAL MESSAGE
+                 ========================================= -->
+
             <div class="final-card">
 
-                <div class="final-heart">❤️</div>
+                <div class="final-heart">
+                    ❤️
+                </div>
 
-                <h2>बुबा...</h2>
+                <h2>
+                    बुबा...
+                </h2>
 
                 <p>
                     म तपाईंलाई शब्दमा बयान गर्न
@@ -222,26 +253,40 @@
     </section>
 
 
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
     <script>
+
         function openSurprise() {
 
-            const opening = document.getElementById("openingScreen");
-            const surprise = document.getElementById("surprisePage");
+            const opening =
+                document.getElementById("openingScreen");
 
+            const surprise =
+                document.getElementById("surprisePage");
+
+            /* Fade out opening */
             opening.classList.add("hide-opening");
 
+            /* Wait for fade animation */
             setTimeout(function () {
 
                 opening.style.display = "none";
 
                 surprise.classList.add("show-page");
 
-                document.body.classList.add("scroll-enabled");
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "instant"
+                });
 
-                window.scrollTo(0, 0);
+            }, 650);
 
-            }, 500);
         }
+
     </script>
 
 </body>
