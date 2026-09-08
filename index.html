@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>बुबाको लागि ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="hearts"></div>
+
+    <main class="container">
+
+        <!-- Opening -->
+        <section id="welcome" class="screen active">
+            <div class="card">
+                <div class="emoji">❤️</div>
+
+                <h1>बुबाको लागि</h1>
+
+                <p>
+                    तपाईंको लागि एउटा सानो सरप्राइज तयार गरेको छु...
+                </p>
+
+                <button onclick="openSurprise()">
+                    सरप्राइज खोल्नुहोस् ✨
+                </button>
+            </div>
+        </section>
+
+
+        <!-- Message -->
+        <section id="message" class="screen">
+            <div class="card">
+
+                <div class="emoji">🥹</div>
+
+                <h1>बुबा...</h1>
+
+                <p>
+                    म सधैं शब्दमा भन्न सक्दिनँ,
+                    तर तपाईं मेरो लागि संसारकै महत्वपूर्ण
+                    मानिसहरूमध्ये एक हुनुहुन्छ।
+                </p>
+
+                <button onclick="nextScreen('memories')">
+                    अगाडि बढ्नुहोस् ❤️
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- Memories -->
+        <section id="memories" class="screen">
+
+            <div class="card">
+
+                <h1>हाम्रा सम्झनाहरू 📸</h1>
+
+                <p>
+                    यहाँ हाम्रा राम्रा सम्झनाहरू आउनेछन्।
+                </p>
+
+                <div class="photo-placeholder">
+                    <span>तपाईंको फोटो यहाँ हुनेछ</span>
+                </div>
+
+                <button onclick="nextScreen('final')">
+                    अझै एउटा कुरा... ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Final -->
+        <section id="final" class="screen">
+
+            <div class="card">
+
+                <div class="emoji">❤️</div>
+
+                <h1>धन्यवाद बुबा</h1>
+
+                <p>
+                    मेरो हरेक खुसीमा,
+                    मेरो हरेक सफलतामा,
+                    र मेरो जीवनको हरेक यात्रामा
+                    साथ दिनुभएकोमा धन्यवाद।
+                </p>
+
+                <h2>
+                    Happy Father's Day, बुबा ❤️
+                </h2>
+
+                <p class="small">
+                    तपाईंलाई धेरै माया गर्छु।
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
