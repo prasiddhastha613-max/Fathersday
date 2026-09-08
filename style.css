@@ -1,6 +1,6 @@
 ```css
 /* =========================
-   BASIC RESET
+   RESET
    ========================= */
 
 * {
@@ -10,7 +10,6 @@
 html {
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -26,155 +25,150 @@ body {
         Arial,
         sans-serif;
 
-    color: #ffffff;
-
-    background:
-        linear-gradient(
-            180deg,
-            #160c13 0%,
-            #25111d 45%,
-            #160c13 100%
-        );
+    background: #170d13;
+    color: white;
 
     overflow-x: hidden;
 }
 
 
 /* =========================
-   INTRO SCREEN
+   OPENING SCREEN
    ========================= */
 
-.intro-screen {
+.opening-screen {
+
+    position: fixed;
+
+    inset: 0;
 
     width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
+    height: 100vh;
+    height: 100svh;
+
+    z-index: 100;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 22px;
+    padding: 20px;
 
     background:
         radial-gradient(
-            circle at 50% 20%,
-            #652b43 0%,
-            #321522 38%,
-            #160c13 100%
+            circle at top,
+            #6a3049 0%,
+            #351622 45%,
+            #170d13 100%
         );
 
     opacity: 1;
 
     transition:
-        opacity 0.6s ease;
+        opacity 0.5s ease;
 }
 
 
-.intro-card {
+.opening-inner {
 
     width: 100%;
     max-width: 430px;
 
-    padding: 48px 25px 42px;
+    padding: 45px 22px;
 
     text-align: center;
 
-    border-radius: 28px;
-
-    background:
-        rgba(255, 255, 255, 0.075);
+    background: rgba(255,255,255,0.08);
 
     border:
-        1px solid rgba(255, 255, 255, 0.14);
+        1px solid rgba(255,255,255,0.13);
+
+    border-radius: 28px;
 
     box-shadow:
-        0 25px 65px rgba(0, 0, 0, 0.45);
+        0 25px 60px rgba(0,0,0,0.45);
 
     backdrop-filter: blur(12px);
 }
 
 
-.intro-heart {
+.opening-heart {
 
-    font-size: 70px;
+    font-size: 65px;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
-    animation:
-        heartbeat 1.5s ease-in-out infinite;
+    animation: beat 1.5s infinite;
 }
 
 
-@keyframes heartbeat {
+@keyframes beat {
 
-    0% {
+    0%, 100% {
         transform: scale(1);
     }
 
     50% {
         transform: scale(1.12);
     }
-
-    100% {
-        transform: scale(1);
-    }
 }
 
 
 .english-title {
 
-    font-size: 27px;
+    font-size: 28px;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 
-.little-text {
+.opening-subtitle {
 
     font-size: 15px;
 
-    opacity: 0.72;
+    opacity: 0.7;
 
     margin-bottom: 25px;
 }
 
 
-.intro-card h1 {
+.opening-inner h1 {
 
     margin: 0;
 
-    font-size: 28px;
+    font-size: 27px;
 
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 
-.intro-subtext {
+.opening-inner p {
 
     margin-top: 22px;
 
-    font-size: 16px;
-
     opacity: 0.7;
+
+    font-size: 16px;
 }
 
 
-.surprise-button {
+.opening-inner button {
 
-    margin-top: 18px;
+    margin-top: 8px;
 
-    padding: 16px 26px;
+    width: 100%;
+
+    padding: 16px 20px;
 
     border: none;
 
     border-radius: 999px;
 
-    background: #ffffff;
+    background: white;
 
-    color: #3c1928;
+    color: #381522;
 
     font-size: 16px;
 
@@ -183,31 +177,18 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        0 10px 30px rgba(0,0,0,0.3);
 }
 
 
-.surprise-button:hover {
+.hide-opening {
 
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 13px 35px rgba(0, 0, 0, 0.38);
-}
-
-
-.surprise-button:active {
-
-    transform: scale(0.95);
+    opacity: 0;
 }
 
 
 /* =========================
-   MAIN SURPRISE PAGE
+   SECOND PAGE
    ========================= */
 
 .surprise-page {
@@ -216,31 +197,42 @@ body {
 
     width: 100%;
 
-    max-width: 650px;
+    min-height: 100vh;
+
+    padding:
+        45px
+        18px
+        80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #170d13,
+            #25121c,
+            #170d13
+        );
+}
+
+
+.show-page {
+
+    display: block;
+}
+
+
+.content {
+
+    width: 100%;
+
+    max-width: 620px;
 
     margin: 0 auto;
 
-    padding:
-        55px
-        20px
-        70px;
-
-}
-
-
-/* =========================
-   TOP
-   ========================= */
-
-.page-top {
-
     text-align: center;
-
-    margin-bottom: 65px;
 }
 
 
-.small-heart {
+.top-icon {
 
     font-size: 45px;
 
@@ -248,63 +240,63 @@ body {
 }
 
 
-.page-top h2 {
+.content > h2 {
 
-    margin: 0 0 15px;
+    margin: 0;
 
-    font-size: 28px;
+    font-size: 29px;
 
     line-height: 1.4;
 }
 
 
-.page-top p {
+.intro-message {
 
-    margin: 0;
+    margin:
+        15px
+        auto
+        70px;
+
+    max-width: 520px;
 
     font-size: 16px;
 
-    line-height: 1.8;
+    line-height: 1.9;
 
     opacity: 0.72;
 }
 
 
 /* =========================
-   MEMORY SECTIONS
+   MEMORY
    ========================= */
 
-.memory-section {
+.memory {
 
     width: 100%;
 
-    margin:
-        0
-        0
-        75px;
+    margin-bottom: 90px;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
-
-    text-align: center;
 }
 
 
-.memory-text {
+.memory p {
+
+    width: 100%;
 
     max-width: 540px;
 
     margin:
-        28px
-        0
+        30px
+        auto
         0;
 
-    padding:
-        0
-        8px;
+    padding: 0 8px;
 
     font-size: 17px;
 
@@ -320,53 +312,38 @@ body {
 
 .polaroid {
 
-    width: min(100%, 380px);
+    width: min(88vw, 370px);
 
     padding:
         12px
         12px
-        20px;
+        22px;
 
     background: #fff;
+
+    color: #2a1b21;
 
     border-radius: 3px;
 
     box-shadow:
-        0 18px 35px rgba(0, 0, 0, 0.35);
-
-    color: #24131b;
-
-    transform-origin: center;
-
-    transition:
-        transform 0.25s ease;
+        0 20px 38px rgba(0,0,0,0.38);
 }
 
 
-.polaroid:hover {
+.rotate-left {
 
-    transform:
-        translateY(-4px)
-        rotate(0deg);
+    transform: rotate(-3deg);
 }
 
 
-.tilted-left {
+.rotate-right {
 
-    transform:
-        rotate(-3deg);
-}
-
-
-.tilted-right {
-
-    transform:
-        rotate(3deg);
+    transform: rotate(3deg);
 }
 
 
 /* =========================
-   EMPTY PHOTO SPACE
+   PHOTO PLACEHOLDER
    ========================= */
 
 .photo-placeholder {
@@ -374,13 +351,6 @@ body {
     width: 100%;
 
     aspect-ratio: 4 / 5;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ddd6da,
-            #c9c0c5
-        );
 
     display: flex;
 
@@ -390,42 +360,43 @@ body {
 
     align-items: center;
 
-    color: #54454c;
+    background: #d9d3d7;
 
-    border-radius: 2px;
+    border: 2px dashed #999097;
 
-    border:
-        2px dashed #9c9096;
+    color: #584b52;
 }
 
 
-.photo-placeholder span {
+.camera {
 
-    font-size: 42px;
+    font-size: 43px;
 
     margin-bottom: 12px;
 }
 
 
-.photo-placeholder strong {
+.photo-number {
 
     font-size: 18px;
+
+    font-weight: 800;
 
     letter-spacing: 1px;
 }
 
 
-.photo-placeholder small {
+.photo-note {
 
     margin-top: 7px;
 
     font-size: 13px;
 
-    opacity: 0.75;
+    opacity: 0.7;
 }
 
 
-.polaroid-caption {
+.caption {
 
     padding-top: 13px;
 
@@ -441,31 +412,31 @@ body {
 
 
 /* =========================
-   FINAL SECTION
+   FINAL
    ========================= */
 
-.final-section {
+.final-card {
 
-    margin-top: 100px;
+    width: 100%;
+
+    margin-top: 40px;
 
     padding:
-        42px
+        45px
         20px
-        45px;
-
-    text-align: center;
+        48px;
 
     border-radius: 28px;
 
     background:
         linear-gradient(
             145deg,
-            #40202f,
-            #21121a
+            #452231,
+            #21131a
         );
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.35);
+        0 20px 45px rgba(0,0,0,0.4);
 }
 
 
@@ -473,24 +444,26 @@ body {
 
     font-size: 58px;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 
-.final-section h2 {
+.final-card h2 {
 
     margin: 0 0 18px;
 
-    font-size: 30px;
+    font-size: 31px;
 }
 
 
-.final-section p {
+.final-card p {
 
     margin:
         0
-        0
+        auto
         20px;
+
+    max-width: 500px;
 
     font-size: 17px;
 
@@ -498,48 +471,43 @@ body {
 }
 
 
-.final-section h3 {
+.final-title {
 
     margin-top: 30px;
 
     font-size: 22px;
+
+    font-weight: 800;
 }
 
 
-.from-son {
+.signature {
 
-    margin-top: 35px !important;
+    margin-top: 32px;
 
-    font-size: 14px !important;
+    font-size: 14px;
 
     opacity: 0.6;
 }
 
 
 /* =========================
-   MOBILE
+   PHONE
    ========================= */
 
 @media (max-width: 480px) {
 
-    .intro-screen {
-
-        padding: 15px;
-    }
-
-
-    .intro-card {
+    .opening-inner {
 
         padding:
-            40px
-            19px
-            35px;
+            38px
+            18px;
     }
 
 
-    .intro-heart {
+    .opening-heart {
 
-        font-size: 60px;
+        font-size: 58px;
     }
 
 
@@ -549,59 +517,45 @@ body {
     }
 
 
-    .intro-card h1 {
+    .opening-inner h1 {
 
-        font-size: 25px;
-    }
-
-
-    .surprise-button {
-
-        width: 100%;
+        font-size: 24px;
     }
 
 
     .surprise-page {
 
         padding:
-            45px
-            16px
-            60px;
+            40px
+            15px
+            70px;
     }
 
 
-    .page-top {
-
-        margin-bottom: 55px;
-    }
-
-
-    .page-top h2 {
+    .content > h2 {
 
         font-size: 25px;
     }
 
 
-    .memory-text {
-
-        font-size: 16px;
-
-        line-height: 1.9;
-    }
-
-
     .polaroid {
 
-        width: 92%;
+        width: 90vw;
     }
 
 
-    .final-section {
+    .memory p {
+
+        font-size: 16px;
+    }
+
+
+    .final-card {
 
         padding:
-            35px
-            17px
-            38px;
+            38px
+            16px
+            42px;
     }
 }
 ```
