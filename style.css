@@ -1,13 +1,755 @@
-/* =========================
-   POLAROID HOVER - STABLE SWAY
-   ========================= */
+```css
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #170d13;
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   SIDE DECORATIONS
+   ========================================= */
+
+.side-decoration {
+
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+
+    width: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    opacity: 0.4;
+}
+
+
+.left-decoration {
+    left: 3px;
+}
+
+
+.right-decoration {
+    right: 3px;
+}
+
+
+.side-decoration span {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    animation:
+        sideFloat 4s ease-in-out infinite;
+}
+
+
+.side-decoration span:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+
+.side-decoration span:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+
+.side-decoration span:nth-child(4) {
+    animation-delay: 2.1s;
+}
+
+
+.side-decoration span:nth-child(5) {
+    animation-delay: 2.8s;
+}
+
+
+@keyframes sideFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(8deg);
+    }
+}
+
+
+/* =========================================
+   OPENING SCREEN
+   ========================================= */
+
+.opening-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #6a3049 0%,
+            #351622 45%,
+            #170d13 100%
+        );
+
+    opacity: 1;
+
+    transition:
+        opacity 0.65s ease;
+}
+
+
+.opening-screen::before {
+
+    content: "✦";
+
+    position: absolute;
+
+    left: 20%;
+    top: 13%;
+
+    font-size: 18px;
+
+    opacity: 0.25;
+
+    animation:
+        sparkleFloat 3.5s ease-in-out infinite;
+}
+
+
+.opening-screen::after {
+
+    content: "✧";
+
+    position: absolute;
+
+    right: 20%;
+    bottom: 15%;
+
+    font-size: 21px;
+
+    opacity: 0.22;
+
+    animation:
+        sparkleFloatReverse 4s ease-in-out infinite;
+}
+
+
+@keyframes sparkleFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            scale(1.25);
+    }
+}
+
+
+@keyframes sparkleFloatReverse {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(18px)
+            scale(1.2);
+    }
+}
+
+
+/* =========================================
+   OPENING CARD
+   ========================================= */
+
+.opening-inner {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding:
+        45px
+        22px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid rgba(255,255,255,0.13);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.45);
+
+    backdrop-filter:
+        blur(12px);
+
+    animation:
+        cardEntrance 1s ease both;
+}
+
+
+@keyframes cardEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   OPENING HEART
+   ========================================= */
+
+.opening-heart {
+
+    font-size: 65px;
+
+    margin-bottom: 12px;
+
+    animation:
+        beat 1.5s ease-in-out infinite;
+}
+
+
+@keyframes beat {
+
+    0%, 100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.13);
+    }
+}
+
+
+/* =========================================
+   OPENING TEXT
+   ========================================= */
+
+.english-title {
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+
+    animation:
+        fadeDown 0.8s ease 0.15s both;
+}
+
+
+.opening-subtitle {
+
+    font-size: 15px;
+
+    opacity: 0.7;
+
+    margin-bottom: 25px;
+
+    animation:
+        fadeDown 0.8s ease 0.3s both;
+}
+
+
+.opening-inner h1 {
+
+    margin: 0;
+
+    font-size: 27px;
+
+    line-height: 1.55;
+
+    animation:
+        fadeUp 0.8s ease 0.45s both;
+}
+
+
+.opening-inner p {
+
+    margin-top: 22px;
+
+    opacity: 0.7;
+
+    font-size: 16px;
+
+    animation:
+        fadeUp 0.8s ease 0.6s both;
+}
+
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   SURPRISE BUTTON
+   ========================================= */
+
+.opening-inner button {
+
+    margin-top: 8px;
+
+    width: 100%;
+
+    padding:
+        16px
+        20px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: white;
+
+    color: #381522;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+
+    animation:
+        buttonAppear 0.8s ease 0.75s both,
+        buttonPulse 2.8s ease-in-out 2s infinite;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+@keyframes buttonAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes buttonPulse {
+
+    0%, 100% {
+        box-shadow:
+            0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 10px 38px rgba(255,255,255,0.32);
+    }
+}
+
+
+.opening-inner button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.015);
+
+    box-shadow:
+        0 15px 40px rgba(255,255,255,0.25);
+}
+
+
+.opening-inner button:active {
+
+    transform:
+        scale(0.95);
+}
+
+
+.button-clicked {
+
+    transform:
+        scale(0.88) !important;
+
+    box-shadow:
+        0 0 50px rgba(255,255,255,0.7) !important;
+}
+
+
+/* =========================================
+   SURPRISE BURST
+   ========================================= */
+
+.burst-particle {
+
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    z-index: 2000;
+
+    pointer-events: none;
+
+    font-size: 19px;
+
+    animation:
+        burst 0.95s ease-out forwards;
+}
+
+
+@keyframes burst {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.3)
+            rotate(0deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.15)
+            rotate(var(--r));
+    }
+}
+
+
+/* =========================================
+   HIDE OPENING
+   ========================================= */
+
+.hide-opening {
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   SECOND PAGE
+   ========================================= */
+
+.surprise-page {
+
+    display: none;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        45px
+        18px
+        80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #170d13,
+            #25121c,
+            #170d13
+        );
+}
+
+
+.show-page {
+
+    display: block;
+
+    animation:
+        secondPageEnter 0.9s ease both;
+}
+
+
+@keyframes secondPageEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.content {
+
+    width: 100%;
+
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TOP
+   ========================================= */
+
+.top-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 8px;
+
+    animation:
+        beat 1.8s ease-in-out infinite;
+}
+
+
+.content > h2 {
+
+    margin: 0;
+
+    font-size: 29px;
+
+    line-height: 1.4;
+}
+
+
+.intro-message {
+
+    margin:
+        15px
+        auto
+        70px;
+
+    max-width: 520px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    opacity: 0.72;
+}
+
+
+/* =========================================
+   MEMORY
+   ========================================= */
+
+.memory {
+
+    width: 100%;
+
+    margin-bottom: 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.memory p {
+
+    width: 100%;
+
+    max-width: 540px;
+
+    margin:
+        30px
+        auto
+        0;
+
+    padding:
+        0
+        8px;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    color: #f5edf2;
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity 0.85s ease,
+        transform 0.85s ease;
+}
+
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================
+   POLAROID
+   ========================================= */
 
 .polaroid {
-    width: min(88vw, 370px);
 
-    padding: 12px 12px 22px;
+    width:
+        min(88vw, 370px);
+
+    padding:
+        12px
+        12px
+        22px;
 
     background: #ffffff;
+
     color: #2a1b21;
 
     border-radius: 3px;
@@ -15,162 +757,324 @@
     box-shadow:
         0 20px 38px rgba(0,0,0,0.38);
 
+    transform-origin:
+        center center;
+
     transition:
         box-shadow 0.3s ease,
         filter 0.3s ease;
 
-    transform-origin: center center;
+    will-change:
+        transform;
+
+    cursor: pointer;
 }
 
 
-/* Normal positions */
-
-.rotate-left {
-    transform: rotate(-3deg);
-}
-
-.rotate-right {
-    transform: rotate(3deg);
-}
-
-
-/* Hover */
+/* Hover polish ONLY.
+   The actual movement is controlled
+   by JavaScript from your pointer position. */
 
 .polaroid:hover {
-    animation:
-        photoSway 1.6s ease-in-out infinite;
 
     box-shadow:
-        0 28px 48px rgba(0,0,0,0.48);
+        0 30px 55px rgba(0,0,0,0.5);
 
-    filter: brightness(1.02);
-
-    position: relative;
-    z-index: 5;
+    filter:
+        brightness(1.02);
 }
 
 
-.rotate-left:hover {
+/* =========================================
+   PHOTO PLACEHOLDER
+   ========================================= */
+
+.photo-placeholder {
+
+    width: 100%;
+
+    aspect-ratio:
+        4 / 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d9d3d7,
+            #c9c1c6
+        );
+
+    border:
+        2px dashed #999097;
+
+    color: #584b52;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.polaroid:hover .photo-placeholder {
+
+    transform:
+        scale(1.012);
+}
+
+
+.camera {
+
+    font-size: 43px;
+
+    margin-bottom: 12px;
+}
+
+
+.photo-number {
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.photo-note {
+
+    margin-top: 7px;
+
+    font-size: 13px;
+
+    opacity: 0.7;
+}
+
+
+.caption {
+
+    padding-top: 13px;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   FINAL
+   ========================================= */
+
+.final-card {
+
+    width: 100%;
+
+    margin-top: 40px;
+
+    padding:
+        45px
+        20px
+        48px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #452231,
+            #21131a
+        );
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.4);
+
     animation:
-        photoSwayLeft 1.6s ease-in-out infinite;
+        finalGlow 4s ease-in-out infinite;
 }
 
 
-.rotate-right:hover {
+.final-heart {
+
+    font-size: 58px;
+
+    margin-bottom: 8px;
+
     animation:
-        photoSwayRight 1.6s ease-in-out infinite;
+        beat 1.5s ease-in-out infinite;
 }
 
 
-/* =========================
-   NORMAL PHOTO SWAY
-   ========================= */
+.final-card h2 {
 
-@keyframes photoSway {
+    margin:
+        0
+        0
+        18px;
 
-    0% {
-        transform:
-            rotate(-2deg)
-            scale(1);
-    }
+    font-size: 31px;
+}
 
-    25% {
-        transform:
-            rotate(-5deg)
-            scale(1.025);
+
+.final-card p {
+
+    margin:
+        0
+        auto
+        20px;
+
+    max-width: 500px;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+.final-title {
+
+    margin-top: 30px;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+
+.signature {
+
+    margin-top: 32px;
+
+    font-size: 14px;
+
+    opacity: 0.6;
+}
+
+
+@keyframes finalGlow {
+
+    0%, 100% {
+        box-shadow:
+            0 20px 45px rgba(0,0,0,0.4);
     }
 
     50% {
-        transform:
-            rotate(4deg)
-            scale(1.035);
-    }
-
-    75% {
-        transform:
-            rotate(-3deg)
-            scale(1.025);
-    }
-
-    100% {
-        transform:
-            rotate(-2deg)
-            scale(1);
+        box-shadow:
+            0 20px 58px rgba(100,45,75,0.3);
     }
 }
 
 
-/* =========================
-   LEFT POLAROID SWAY
-   ========================= */
+/* =========================================
+   PHONE
+   ========================================= */
 
-@keyframes photoSwayLeft {
+@media (max-width: 480px) {
 
-    0% {
-        transform:
-            rotate(-3deg)
-            scale(1);
+    .side-decoration {
+
+        width: 28px;
+
+        opacity: 0.25;
     }
 
-    25% {
-        transform:
-            rotate(-6deg)
-            scale(1.025);
+
+    .side-decoration span {
+
+        font-size: 14px;
     }
 
-    50% {
-        transform:
-            rotate(2deg)
-            scale(1.035);
+
+    .opening-inner {
+
+        padding:
+            38px
+            18px;
     }
 
-    75% {
-        transform:
-            rotate(-4deg)
-            scale(1.025);
+
+    .opening-heart {
+
+        font-size: 58px;
     }
 
-    100% {
-        transform:
-            rotate(-3deg)
-            scale(1);
+
+    .english-title {
+
+        font-size: 24px;
+    }
+
+
+    .opening-inner h1 {
+
+        font-size: 24px;
+    }
+
+
+    .surprise-page {
+
+        padding:
+            40px
+            15px
+            70px;
+    }
+
+
+    .content > h2 {
+
+        font-size: 25px;
+    }
+
+
+    .polaroid {
+
+        width: 90vw;
+    }
+
+
+    .memory p {
+
+        font-size: 16px;
+    }
+
+
+    .final-card {
+
+        padding:
+            38px
+            16px
+            48px;
     }
 }
 
 
-/* =========================
-   RIGHT POLAROID SWAY
-   ========================= */
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
 
-@keyframes photoSwayRight {
+@media (prefers-reduced-motion: reduce) {
 
-    0% {
-        transform:
-            rotate(3deg)
-            scale(1);
-    }
+    *,
+    *::before,
+    *::after {
 
-    25% {
-        transform:
-            rotate(-1deg)
-            scale(1.025);
-    }
+        animation-duration:
+            0.01ms !important;
 
-    50% {
-        transform:
-            rotate(6deg)
-            scale(1.035);
-    }
+        animation-iteration-count:
+            1 !important;
 
-    75% {
-        transform:
-            rotate(2deg)
-            scale(1.025);
-    }
-
-    100% {
-        transform:
-            rotate(3deg)
-            scale(1);
+        transition-duration:
+            0.01ms !important;
     }
 }
+```
