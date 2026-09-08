@@ -10,6 +10,7 @@
 html {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -26,10 +27,98 @@ body {
         sans-serif;
 
     background: #170d13;
-
     color: white;
 
     overflow-x: hidden;
+}
+
+
+/* =========================
+   SIDE DECORATIONS
+   ========================= */
+
+.side-decoration {
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+
+    width: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    opacity: 0.45;
+}
+
+
+.left-decoration {
+    left: 4px;
+}
+
+
+.right-decoration {
+    right: 4px;
+}
+
+
+.side-decoration span {
+
+    display: block;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    animation:
+        sideFloat 4s ease-in-out infinite;
+}
+
+
+.side-decoration span:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+
+.side-decoration span:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+
+.side-decoration span:nth-child(4) {
+    animation-delay: 2.1s;
+}
+
+
+.side-decoration span:nth-child(5) {
+    animation-delay: 2.8s;
+}
+
+
+@keyframes sideFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(8deg);
+    }
 }
 
 
@@ -73,48 +162,79 @@ body {
 
 .opening-screen::before {
 
-    content: "❤️";
+    content: "✦";
 
     position: absolute;
 
-    left: 12%;
-    top: 18%;
+    top: 13%;
+    left: 20%;
 
-    font-size: 20px;
+    font-size: 18px;
 
-    opacity: 0.15;
+    opacity: 0.25;
 
     animation:
-        floatHeart 5s ease-in-out infinite;
-
-    pointer-events: none;
+        sparkleFloat 3.5s ease-in-out infinite;
 }
 
 
 .opening-screen::after {
 
-    content: "❤️";
+    content: "✧";
 
     position: absolute;
 
-    right: 12%;
-    bottom: 18%;
+    bottom: 15%;
+    right: 20%;
 
-    font-size: 18px;
+    font-size: 21px;
 
-    opacity: 0.13;
+    opacity: 0.22;
 
     animation:
-        floatHeartReverse 6s ease-in-out infinite;
-
-    pointer-events: none;
+        sparkleFloatReverse 4s ease-in-out infinite;
 }
 
+
+@keyframes sparkleFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            scale(1.25);
+    }
+}
+
+
+@keyframes sparkleFloatReverse {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(18px)
+            scale(1.2);
+    }
+}
+
+
+/* =========================
+   OPENING CARD
+   ========================= */
 
 .opening-inner {
 
     width: 100%;
-
     max-width: 430px;
 
     padding:
@@ -138,7 +258,7 @@ body {
         blur(12px);
 
     animation:
-        cardEntrance 1.1s ease both;
+        cardEntrance 1s ease both;
 }
 
 
@@ -162,6 +282,10 @@ body {
 }
 
 
+/* =========================
+   HEART
+   ========================= */
+
 .opening-heart {
 
     font-size: 65px;
@@ -169,11 +293,11 @@ body {
     margin-bottom: 12px;
 
     animation:
-        heartBeat 1.5s ease-in-out infinite;
+        beat 1.5s ease-in-out infinite;
 }
 
 
-@keyframes heartBeat {
+@keyframes beat {
 
     0%, 100% {
         transform:
@@ -182,10 +306,14 @@ body {
 
     50% {
         transform:
-            scale(1.14);
+            scale(1.13);
     }
 }
 
+
+/* =========================
+   OPENING TEXT
+   ========================= */
 
 .english-title {
 
@@ -196,7 +324,7 @@ body {
     margin-bottom: 8px;
 
     animation:
-        fadeDown 0.8s ease 0.2s both;
+        textIn 0.8s ease 0.15s both;
 }
 
 
@@ -209,7 +337,7 @@ body {
     margin-bottom: 25px;
 
     animation:
-        fadeDown 0.8s ease 0.35s both;
+        textIn 0.8s ease 0.3s both;
 }
 
 
@@ -222,7 +350,7 @@ body {
     line-height: 1.55;
 
     animation:
-        fadeUp 0.8s ease 0.5s both;
+        textIn 0.8s ease 0.45s both;
 }
 
 
@@ -235,9 +363,31 @@ body {
     font-size: 16px;
 
     animation:
-        fadeUp 0.8s ease 0.65s both;
+        textIn 0.8s ease 0.6s both;
 }
 
+
+@keyframes textIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   SURPRISE BUTTON
+   ========================= */
 
 .opening-inner button {
 
@@ -245,7 +395,9 @@ body {
 
     width: 100%;
 
-    padding: 16px 20px;
+    padding:
+        16px
+        20px;
 
     border: none;
 
@@ -265,61 +417,16 @@ body {
         0 10px 30px rgba(0,0,0,0.3);
 
     animation:
-        fadeUp 0.8s ease 0.8s both,
-        buttonPulse 2.7s ease-in-out 2s infinite;
+        buttonAppear 0.8s ease 0.75s both,
+        buttonPulse 2.8s ease-in-out 2s infinite;
 
     transition:
-        transform 0.2s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
-.opening-inner button:hover {
-
-    transform:
-        translateY(-3px);
-}
-
-
-.opening-inner button:active {
-
-    transform:
-        scale(0.95);
-}
-
-
-@keyframes buttonPulse {
-
-    0%, 100% {
-        box-shadow:
-            0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    50% {
-        box-shadow:
-            0 10px 38px rgba(255,255,255,0.32);
-    }
-}
-
-
-@keyframes fadeDown {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(-15px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes fadeUp {
+@keyframes buttonAppear {
 
     from {
         opacity: 0;
@@ -337,37 +444,105 @@ body {
 }
 
 
-@keyframes floatHeart {
+@keyframes buttonPulse {
 
     0%, 100% {
-        transform:
-            translateY(0)
-            rotate(-10deg);
+        box-shadow:
+            0 10px 30px rgba(0,0,0,0.3);
     }
 
     50% {
-        transform:
-            translateY(-30px)
-            rotate(10deg);
+        box-shadow:
+            0 10px 38px rgba(255,255,255,0.32);
     }
 }
 
 
-@keyframes floatHeartReverse {
+.opening-inner button:hover {
 
-    0%, 100% {
+    transform:
+        translateY(-4px)
+        scale(1.015);
+
+    box-shadow:
+        0 15px 40px rgba(255,255,255,0.24);
+}
+
+
+.opening-inner button:active {
+
+    transform:
+        scale(0.95);
+}
+
+
+.button-clicked {
+
+    transform:
+        scale(0.88) !important;
+
+    box-shadow:
+        0 0 50px rgba(255,255,255,0.65) !important;
+}
+
+
+/* =========================
+   CLICK PARTICLES
+   ========================= */
+
+.burst-particle {
+
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    z-index: 2000;
+
+    pointer-events: none;
+
+    font-size: 19px;
+
+    animation:
+        burst 0.95s ease-out forwards;
+}
+
+
+@keyframes burst {
+
+    0% {
+
+        opacity: 0;
+
         transform:
-            translateY(0)
-            rotate(10deg);
+            translate(-50%, -50%)
+            scale(0.3)
+            rotate(0deg);
     }
 
-    50% {
+    15% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 0;
+
         transform:
-            translateY(30px)
-            rotate(-10deg);
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.15)
+            rotate(var(--r));
     }
 }
 
+
+/* =========================
+   HIDE OPENING
+   ========================= */
 
 .hide-opening {
 
@@ -407,6 +582,29 @@ body {
 .show-page {
 
     display: block;
+
+    animation:
+        secondPageIn 0.9s ease both;
+}
+
+
+@keyframes secondPageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
 }
 
 
@@ -422,6 +620,10 @@ body {
 }
 
 
+/* =========================
+   TOP
+   ========================= */
+
 .top-icon {
 
     font-size: 45px;
@@ -429,7 +631,7 @@ body {
     margin-bottom: 8px;
 
     animation:
-        heartBeat 1.8s ease-in-out infinite;
+        beat 1.8s ease-in-out infinite;
 }
 
 
@@ -440,9 +642,6 @@ body {
     font-size: 29px;
 
     line-height: 1.4;
-
-    animation:
-        fadeUp 0.9s ease both;
 }
 
 
@@ -460,9 +659,6 @@ body {
     line-height: 1.9;
 
     opacity: 0.72;
-
-    animation:
-        fadeUp 0.9s ease 0.2s both;
 }
 
 
@@ -495,7 +691,9 @@ body {
         auto
         0;
 
-    padding: 0 8px;
+    padding:
+        0
+        8px;
 
     font-size: 17px;
 
@@ -517,8 +715,8 @@ body {
         translateY(40px);
 
     transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
+        opacity 0.85s ease,
+        transform 0.85s ease;
 }
 
 
@@ -537,14 +735,15 @@ body {
 
 .polaroid {
 
-    width: min(88vw, 370px);
+    width:
+        min(88vw, 370px);
 
     padding:
         12px
         12px
         22px;
 
-    background: #fff;
+    background: #ffffff;
 
     color: #2a1b21;
 
@@ -553,72 +752,60 @@ body {
     box-shadow:
         0 20px 38px rgba(0,0,0,0.38);
 
-    animation:
-        gentleFloat 5s ease-in-out infinite;
+    transition:
+        transform 0.35s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.35s ease;
 }
 
 
+/* NORMAL */
+.polaroid:hover {
+
+    transform:
+        translateY(-12px)
+        rotate(0deg)
+        scale(1.035);
+
+    box-shadow:
+        0 30px 55px rgba(0,0,0,0.5);
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* TILTED LEFT */
 .rotate-left {
 
-    transform: rotate(-3deg);
-
-    animation:
-        floatLeft 5s ease-in-out infinite;
+    transform:
+        rotate(-3deg);
 }
 
 
+.rotate-left:hover {
+
+    transform:
+        translateY(-12px)
+        rotate(-1deg)
+        scale(1.035);
+}
+
+
+/* TILTED RIGHT */
 .rotate-right {
 
-    transform: rotate(3deg);
-
-    animation:
-        floatRight 5s ease-in-out infinite;
+    transform:
+        rotate(3deg);
 }
 
 
-@keyframes gentleFloat {
+.rotate-right:hover {
 
-    0%, 100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-7px);
-    }
-}
-
-
-@keyframes floatLeft {
-
-    0%, 100% {
-        transform:
-            rotate(-3deg)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            rotate(-3deg)
-            translateY(-7px);
-    }
-}
-
-
-@keyframes floatRight {
-
-    0%, 100% {
-        transform:
-            rotate(3deg)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            rotate(3deg)
-            translateY(-7px);
-    }
+    transform:
+        translateY(-12px)
+        rotate(1deg)
+        scale(1.035);
 }
 
 
@@ -630,7 +817,8 @@ body {
 
     width: 100%;
 
-    aspect-ratio: 4 / 5;
+    aspect-ratio:
+        4 / 5;
 
     display: flex;
 
@@ -640,7 +828,12 @@ body {
 
     align-items: center;
 
-    background: #d9d3d7;
+    background:
+        linear-gradient(
+            145deg,
+            #d9d3d7,
+            #c9c1c6
+        );
 
     border:
         2px dashed #999097;
@@ -648,15 +841,14 @@ body {
     color: #584b52;
 
     transition:
-        background 0.3s ease,
-        transform 0.3s ease;
+        transform 0.35s ease;
 }
 
 
 .polaroid:hover .photo-placeholder {
 
     transform:
-        scale(1.01);
+        scale(1.015);
 }
 
 
@@ -704,7 +896,7 @@ body {
 
 
 /* =========================
-   FINAL
+   FINAL CARD
    ========================= */
 
 .final-card {
@@ -742,14 +934,16 @@ body {
     margin-bottom: 8px;
 
     animation:
-        heartBeat 1.5s ease-in-out infinite;
+        beat 1.5s ease-in-out infinite;
 }
 
 
 .final-card h2 {
 
     margin:
-        0 0 18px;
+        0
+        0
+        18px;
 
     font-size: 31px;
 }
@@ -793,13 +987,15 @@ body {
 @keyframes finalGlow {
 
     0%, 100% {
+
         box-shadow:
             0 20px 45px rgba(0,0,0,0.4);
     }
 
     50% {
+
         box-shadow:
-            0 20px 55px rgba(100,45,75,0.3);
+            0 20px 58px rgba(110,45,80,0.32);
     }
 }
 
@@ -809,6 +1005,20 @@ body {
    ========================= */
 
 @media (max-width: 480px) {
+
+    .side-decoration {
+
+        width: 28px;
+
+        opacity: 0.25;
+    }
+
+
+    .side-decoration span {
+
+        font-size: 14px;
+    }
+
 
     .opening-inner {
 
@@ -874,7 +1084,7 @@ body {
 
 
 /* =========================
-   ACCESSIBILITY
+   REDUCED MOTION
    ========================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -891,9 +1101,6 @@ body {
 
         transition-duration:
             0.01ms !important;
-
-        scroll-behavior:
-            auto !important;
     }
 }
 ```
