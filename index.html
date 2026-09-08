@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Happy Father's Day ❤️</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,14 +30,17 @@
     </div>
 
 
-    <!-- =========================
+    <!-- =====================================
          OPENING SCREEN
-         ========================= -->
+         ===================================== -->
+
     <section id="openingScreen" class="opening-screen">
 
         <div class="opening-inner">
 
-            <div class="opening-heart">❤️</div>
+            <div class="opening-heart">
+                ❤️
+            </div>
 
             <div class="english-title">
                 Happy Father's Day
@@ -63,33 +68,50 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================
          SECOND PAGE
-         ========================= -->
+         ===================================== -->
+
     <section id="surprisePage" class="surprise-page">
 
         <div class="content">
 
-            <div class="top-icon">❤️</div>
+            <div class="top-icon">
+                ❤️
+            </div>
 
-            <h2>बुबा, यो तपाईंको लागि हो</h2>
+            <h2>
+                बुबा, यो तपाईंको लागि हो
+            </h2>
 
             <p class="intro-message">
-                तपाईंको लागि तयार गरेको केही सम्झना र केही शब्दहरू...
+                तपाईंको लागि तयार गरेको केही सम्झना
+                र केही शब्दहरू...
             </p>
 
 
-            <!-- PHOTO 1 -->
+            <!-- =====================================
+                 PHOTO 1
+                 ===================================== -->
+
             <div class="memory reveal">
 
                 <div class="polaroid">
 
                     <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 1</div>
+
+                        <div class="camera">
+                            📷
+                        </div>
+
+                        <div class="photo-number">
+                            PHOTO 1
+                        </div>
+
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
+
                     </div>
 
                     <div class="caption">
@@ -107,17 +129,28 @@
             </div>
 
 
-            <!-- PHOTO 2 -->
+            <!-- =====================================
+                 PHOTO 2
+                 ===================================== -->
+
             <div class="memory reveal">
 
                 <div class="polaroid rotate-left">
 
                     <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 2</div>
+
+                        <div class="camera">
+                            📷
+                        </div>
+
+                        <div class="photo-number">
+                            PHOTO 2
+                        </div>
+
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
+
                     </div>
 
                     <div class="caption">
@@ -135,17 +168,28 @@
             </div>
 
 
-            <!-- PHOTO 3 -->
+            <!-- =====================================
+                 PHOTO 3
+                 ===================================== -->
+
             <div class="memory reveal">
 
                 <div class="polaroid rotate-right">
 
                     <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 3</div>
+
+                        <div class="camera">
+                            📷
+                        </div>
+
+                        <div class="photo-number">
+                            PHOTO 3
+                        </div>
+
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
+
                     </div>
 
                     <div class="caption">
@@ -163,17 +207,28 @@
             </div>
 
 
-            <!-- PHOTO 4 -->
+            <!-- =====================================
+                 PHOTO 4
+                 ===================================== -->
+
             <div class="memory reveal">
 
                 <div class="polaroid">
 
                     <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 4</div>
+
+                        <div class="camera">
+                            📷
+                        </div>
+
+                        <div class="photo-number">
+                            PHOTO 4
+                        </div>
+
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
+
                     </div>
 
                     <div class="caption">
@@ -191,17 +246,28 @@
             </div>
 
 
-            <!-- PHOTO 5 -->
+            <!-- =====================================
+                 PHOTO 5
+                 ===================================== -->
+
             <div class="memory reveal">
 
                 <div class="polaroid rotate-left">
 
                     <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <div class="photo-number">PHOTO 5</div>
+
+                        <div class="camera">
+                            📷
+                        </div>
+
+                        <div class="photo-number">
+                            PHOTO 5
+                        </div>
+
                         <div class="photo-note">
                             फोटो यहाँ राख्नुहोस्
                         </div>
+
                     </div>
 
                     <div class="caption">
@@ -218,14 +284,19 @@
             </div>
 
 
-            <!-- FINAL -->
+            <!-- =====================================
+                 FINAL MESSAGE
+                 ===================================== -->
+
             <div class="final-card reveal">
 
                 <div class="final-heart">
                     ❤️
                 </div>
 
-                <h2>बुबा...</h2>
+                <h2>
+                    बुबा...
+                </h2>
 
                 <p>
                     म तपाईंलाई शब्दमा बयान गर्न
@@ -252,23 +323,41 @@
     </section>
 
 
-    <!-- =========================
-         SCRIPT
-         ========================= -->
+    <!-- =====================================
+         JAVASCRIPT
+         ===================================== -->
+
     <script>
+
+        /* =====================================
+           SURPRISE BUTTON PARTICLE BURST
+           ===================================== */
 
         function createBurst() {
 
-            const symbols = ["❤️", "♡", "✦", "✧", "✨"];
+            const symbols = [
+                "❤️",
+                "♡",
+                "✦",
+                "✧",
+                "✨"
+            ];
 
             for (let i = 0; i < 18; i++) {
 
-                const particle = document.createElement("span");
+                const particle =
+                    document.createElement("span");
 
-                particle.className = "burst-particle";
+                particle.className =
+                    "burst-particle";
 
                 particle.textContent =
-                    symbols[Math.floor(Math.random() * symbols.length)];
+                    symbols[
+                        Math.floor(
+                            Math.random() *
+                            symbols.length
+                        )
+                    ];
 
                 particle.style.setProperty(
                     "--x",
@@ -285,47 +374,68 @@
                     (Math.random() * 180 - 90) + "deg"
                 );
 
-                document.body.appendChild(particle);
+                document.body.appendChild(
+                    particle
+                );
 
                 setTimeout(function () {
+
                     particle.remove();
+
                 }, 1000);
+
             }
+
         }
 
+
+        /* =====================================
+           OPEN SURPRISE
+           ===================================== */
 
         function openSurprise() {
 
             const opening =
-                document.getElementById("openingScreen");
+                document.getElementById(
+                    "openingScreen"
+                );
 
             const surprise =
-                document.getElementById("surprisePage");
+                document.getElementById(
+                    "surprisePage"
+                );
 
             const button =
-                document.getElementById("surpriseButton");
+                document.getElementById(
+                    "surpriseButton"
+                );
 
 
-            /* Small click animation */
-            button.classList.add("button-clicked");
+            button.classList.add(
+                "button-clicked"
+            );
+
 
             createBurst();
 
 
-            /* Fade opening away */
             setTimeout(function () {
 
-                opening.classList.add("hide-opening");
+                opening.classList.add(
+                    "hide-opening"
+                );
 
             }, 120);
 
 
-            /* Reveal second page */
             setTimeout(function () {
 
-                opening.style.display = "none";
+                opening.style.display =
+                    "none";
 
-                surprise.classList.add("show-page");
+                surprise.classList.add(
+                    "show-page"
+                );
 
                 window.scrollTo({
                     top: 0,
@@ -334,15 +444,18 @@
                 });
 
             }, 700);
+
         }
 
 
-        /* =========================
-           SCROLL REVEALS
-           ========================= */
+        /* =====================================
+           SCROLL REVEAL
+           ===================================== */
 
         const revealItems =
-            document.querySelectorAll(".reveal");
+            document.querySelectorAll(
+                ".reveal"
+            );
 
 
         const observer =
@@ -350,31 +463,42 @@
 
                 function(entries) {
 
-                    entries.forEach(function(entry) {
+                    entries.forEach(
+                        function(entry) {
 
-                        if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add("visible");
+                                entry.target.classList.add(
+                                    "visible"
+                                );
 
-                            observer.unobserve(entry.target);
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
 
                 {
                     threshold: 0.12
                 }
+
             );
 
 
-        revealItems.forEach(function(item) {
+        revealItems.forEach(
+            function(item) {
 
-            observer.observe(item);
+                observer.observe(item);
 
-        });
+            }
+        );
 
     </script>
 
