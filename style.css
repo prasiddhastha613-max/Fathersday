@@ -1,202 +1,232 @@
 ```css
 /* =========================
-   POLAROID HOVER SWAY
+   POLAROID - SMOOTH SWAY
    ========================= */
 
 .polaroid {
     width: min(88vw, 370px);
 
-    padding:
-        12px
-        12px
-        22px;
+    padding: 12px 12px 22px;
 
     background: #ffffff;
-
     color: #2a1b21;
 
     border-radius: 3px;
 
     box-shadow:
-        0 20px 38px rgba(0,0,0,0.38);
+        0 20px 38px rgba(0, 0, 0, 0.38);
+
+    transform-origin: 50% 8%;
 
     transition:
-        box-shadow 0.3s ease,
-        transform 0.25s ease;
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
 
-    transform-origin: center bottom;
+    will-change: transform;
 }
 
 
-/* Normal Polaroid */
+/* ---------- HOVER ---------- */
 
 .polaroid:hover {
 
     animation:
-        polaroidSway 1.8s ease-in-out infinite;
+        smoothSway 2.8s ease-in-out infinite;
 
     box-shadow:
-        0 28px 50px rgba(0,0,0,0.48);
+        0 28px 55px rgba(0, 0, 0, 0.5);
+
+    filter:
+        brightness(1.02);
 
     position: relative;
-
     z-index: 5;
 }
 
 
-/* Left-tilted Polaroid */
+/* ---------- NORMAL TILTS ---------- */
 
 .rotate-left {
-
-    transform:
-        rotate(-3deg);
+    transform: rotate(-3deg);
 }
+
+.rotate-right {
+    transform: rotate(3deg);
+}
+
+
+/* ---------- LEFT TILT HOVER ---------- */
 
 .rotate-left:hover {
 
     animation:
-        polaroidSwayLeft 1.8s ease-in-out infinite;
+        smoothSwayLeft 2.8s ease-in-out infinite;
+
 }
 
 
-/* Right-tilted Polaroid */
-
-.rotate-right {
-
-    transform:
-        rotate(3deg);
-}
+/* ---------- RIGHT TILT HOVER ---------- */
 
 .rotate-right:hover {
 
     animation:
-        polaroidSwayRight 1.8s ease-in-out infinite;
+        smoothSwayRight 2.8s ease-in-out infinite;
+
 }
 
 
 /* =========================
-   SWAY ANIMATIONS
+   MAIN SWAY
    ========================= */
 
-@keyframes polaroidSway {
+@keyframes smoothSway {
 
     0% {
         transform:
             translateX(0)
             rotate(-2deg)
-            scale(1.02);
+            scale(1);
     }
 
-    25% {
+    20% {
         transform:
-            translateX(-7px)
+            translateX(-8px)
             rotate(-4deg)
-            scale(1.03);
+            scale(1.015);
     }
 
-    50% {
+    40% {
         transform:
-            translateX(7px)
+            translateX(-3px)
+            rotate(-1.5deg)
+            scale(1.025);
+    }
+
+    60% {
+        transform:
+            translateX(8px)
             rotate(4deg)
-            scale(1.03);
+            scale(1.025);
     }
 
-    75% {
+    80% {
         transform:
-            translateX(-5px)
-            rotate(-3deg)
-            scale(1.02);
+            translateX(3px)
+            rotate(1.5deg)
+            scale(1.015);
     }
 
     100% {
         transform:
             translateX(0)
             rotate(-2deg)
-            scale(1.02);
-    }
-}
-
-
-@keyframes polaroidSwayLeft {
-
-    0% {
-        transform:
-            translateX(0)
-            rotate(-3deg)
-            scale(1.02);
-    }
-
-    25% {
-        transform:
-            translateX(-7px)
-            rotate(-6deg)
-            scale(1.03);
-    }
-
-    50% {
-        transform:
-            translateX(7px)
-            rotate(1deg)
-            scale(1.03);
-    }
-
-    75% {
-        transform:
-            translateX(-5px)
-            rotate(-5deg)
-            scale(1.02);
-    }
-
-    100% {
-        transform:
-            translateX(0)
-            rotate(-3deg)
-            scale(1.02);
-    }
-}
-
-
-@keyframes polaroidSwayRight {
-
-    0% {
-        transform:
-            translateX(0)
-            rotate(3deg)
-            scale(1.02);
-    }
-
-    25% {
-        transform:
-            translateX(-7px)
-            rotate(-1deg)
-            scale(1.03);
-    }
-
-    50% {
-        transform:
-            translateX(7px)
-            rotate(6deg)
-            scale(1.03);
-    }
-
-    75% {
-        transform:
-            translateX(-5px)
-            rotate(1deg)
-            scale(1.02);
-    }
-
-    100% {
-        transform:
-            translateX(0)
-            rotate(3deg)
-            scale(1.02);
+            scale(1);
     }
 }
 
 
 /* =========================
-   MOBILE TOUCH FEEL
+   LEFT TILT SWAY
+   ========================= */
+
+@keyframes smoothSwayLeft {
+
+    0% {
+        transform:
+            translateX(0)
+            rotate(-3deg)
+            scale(1);
+    }
+
+    20% {
+        transform:
+            translateX(-8px)
+            rotate(-6deg)
+            scale(1.015);
+    }
+
+    40% {
+        transform:
+            translateX(-3px)
+            rotate(-2deg)
+            scale(1.025);
+    }
+
+    60% {
+        transform:
+            translateX(8px)
+            rotate(2deg)
+            scale(1.025);
+    }
+
+    80% {
+        transform:
+            translateX(3px)
+            rotate(-1deg)
+            scale(1.015);
+    }
+
+    100% {
+        transform:
+            translateX(0)
+            rotate(-3deg)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   RIGHT TILT SWAY
+   ========================= */
+
+@keyframes smoothSwayRight {
+
+    0% {
+        transform:
+            translateX(0)
+            rotate(3deg)
+            scale(1);
+    }
+
+    20% {
+        transform:
+            translateX(-8px)
+            rotate(-1deg)
+            scale(1.015);
+    }
+
+    40% {
+        transform:
+            translateX(-3px)
+            rotate(2deg)
+            scale(1.025);
+    }
+
+    60% {
+        transform:
+            translateX(8px)
+            rotate(6deg)
+            scale(1.025);
+    }
+
+    80% {
+        transform:
+            translateX(3px)
+            rotate(4deg)
+            scale(1.015);
+    }
+
+    100% {
+        transform:
+            translateX(0)
+            rotate(3deg)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   MOBILE
    ========================= */
 
 @media (max-width: 480px) {
@@ -204,10 +234,11 @@
     .polaroid:active {
 
         animation:
-            polaroidSway 1.4s ease-in-out infinite;
+            smoothSway 2.2s ease-in-out infinite;
 
         box-shadow:
-            0 25px 45px rgba(0,0,0,0.45);
+            0 26px 48px rgba(0,0,0,0.45);
     }
+
 }
 ```
