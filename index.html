@@ -62,7 +62,7 @@
 
 
             <!-- PHOTO 1 -->
-            <div class="memory">
+            <div class="memory reveal">
 
                 <div class="polaroid">
 
@@ -88,7 +88,7 @@
 
 
             <!-- PHOTO 2 -->
-            <div class="memory">
+            <div class="memory reveal">
 
                 <div class="polaroid rotate-left">
 
@@ -114,7 +114,7 @@
 
 
             <!-- PHOTO 3 -->
-            <div class="memory">
+            <div class="memory reveal">
 
                 <div class="polaroid rotate-right">
 
@@ -140,7 +140,7 @@
 
 
             <!-- PHOTO 4 -->
-            <div class="memory">
+            <div class="memory reveal">
 
                 <div class="polaroid">
 
@@ -166,7 +166,7 @@
 
 
             <!-- PHOTO 5 -->
-            <div class="memory">
+            <div class="memory reveal">
 
                 <div class="polaroid rotate-left">
 
@@ -191,7 +191,7 @@
 
 
             <!-- FINAL -->
-            <div class="final-card">
+            <div class="final-card reveal">
 
                 <div class="final-heart">❤️</div>
 
@@ -223,10 +223,14 @@
 
 
     <script>
+
         function openSurprise() {
 
-            const opening = document.getElementById("openingScreen");
-            const surprise = document.getElementById("surprisePage");
+            const opening =
+                document.getElementById("openingScreen");
+
+            const surprise =
+                document.getElementById("surprisePage");
 
             opening.classList.add("hide-opening");
 
@@ -238,10 +242,51 @@
 
                 document.body.classList.add("scroll-enabled");
 
-                window.scrollTo(0, 0);
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "instant"
+                });
 
-            }, 500);
+            }, 650);
         }
+
+
+        /* =========================
+           SCROLL REVEAL ANIMATION
+           ========================= */
+
+        const revealItems =
+            document.querySelectorAll(".reveal");
+
+        const observer =
+            new IntersectionObserver(
+
+                function(entries) {
+
+                    entries.forEach(function(entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealItems.forEach(function(item) {
+            observer.observe(item);
+        });
+
     </script>
 
 </body>
