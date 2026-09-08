@@ -1,7 +1,7 @@
 ```css
-/* =========================
+/* =========================================
    RESET
-   ========================= */
+   ========================================= */
 
 * {
     box-sizing: border-box;
@@ -10,14 +10,15 @@
 html {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     padding: 0;
 
-    width: 100%;
     min-height: 100vh;
+    width: 100%;
 
     font-family:
         "Noto Sans Devanagari",
@@ -25,16 +26,23 @@ body {
         Arial,
         sans-serif;
 
-    background: #170d13;
-    color: white;
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            180deg,
+            #150b11 0%,
+            #27131e 48%,
+            #150b11 100%
+        );
 
     overflow-x: hidden;
 }
 
 
-/* =========================
+/* =========================================
    OPENING SCREEN
-   ========================= */
+   ========================================= */
 
 .opening-screen {
 
@@ -42,74 +50,177 @@ body {
 
     inset: 0;
 
+    z-index: 1000;
+
     width: 100%;
     height: 100vh;
     height: 100svh;
 
-    z-index: 100;
-
     display: flex;
+
     justify-content: center;
     align-items: center;
 
-    padding: 20px;
+    padding: 18px;
 
     background:
         radial-gradient(
-            circle at top,
-            #6a3049 0%,
-            #351622 45%,
-            #170d13 100%
+            circle at 50% 15%,
+            #6b314a 0%,
+            #351622 42%,
+            #150b11 100%
         );
 
     opacity: 1;
 
     transition:
-        opacity 0.5s ease;
+        opacity 0.65s ease;
+}
+
+
+.opening-screen::before {
+
+    content: "❤️";
+
+    position: absolute;
+
+    top: 15%;
+    left: 12%;
+
+    font-size: 23px;
+
+    opacity: 0.18;
+
+    animation:
+        floatingHeart1 5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+.opening-screen::after {
+
+    content: "❤️";
+
+    position: absolute;
+
+    right: 12%;
+    bottom: 18%;
+
+    font-size: 20px;
+
+    opacity: 0.15;
+
+    animation:
+        floatingHeart2 6s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes floatingHeart1 {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-10deg);
+    }
+
+    50% {
+        transform:
+            translateY(-28px)
+            rotate(10deg);
+    }
+}
+
+
+@keyframes floatingHeart2 {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(10deg);
+    }
+
+    50% {
+        transform:
+            translateY(28px)
+            rotate(-10deg);
+    }
 }
 
 
 .opening-inner {
 
+    position: relative;
+
+    z-index: 2;
+
     width: 100%;
     max-width: 430px;
 
-    padding: 45px 22px;
+    padding:
+        46px
+        22px
+        42px;
 
     text-align: center;
 
-    background: rgba(255,255,255,0.08);
-
     border:
-        1px solid rgba(255,255,255,0.13);
+        1px solid rgba(255, 255, 255, 0.14);
 
-    border-radius: 28px;
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.075);
+
+    backdrop-filter: blur(14px);
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,0.45);
+        0 25px 65px rgba(0, 0, 0, 0.48);
 
-    backdrop-filter: blur(12px);
+    animation:
+        openingEnter 1.1s ease both;
+}
+
+
+@keyframes openingEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
 }
 
 
 .opening-heart {
 
-    font-size: 65px;
+    font-size: 67px;
 
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 
-    animation: beat 1.5s infinite;
+    animation:
+        heartbeat 1.5s ease-in-out infinite;
 }
 
 
-@keyframes beat {
+@keyframes heartbeat {
 
     0%, 100% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(1.12);
+        transform: scale(1.13);
     }
 }
 
@@ -120,55 +231,73 @@ body {
 
     font-weight: 800;
 
-    margin-bottom: 8px;
+    animation:
+        fadeDown 0.8s ease 0.2s both;
 }
 
 
 .opening-subtitle {
 
+    margin-top: 8px;
+
     font-size: 15px;
 
     opacity: 0.7;
 
-    margin-bottom: 25px;
+    animation:
+        fadeDown 0.8s ease 0.35s both;
 }
 
 
 .opening-inner h1 {
 
-    margin: 0;
+    margin:
+        27px
+        0
+        0;
 
     font-size: 27px;
 
     line-height: 1.55;
+
+    animation:
+        fadeUp 0.8s ease 0.5s both;
 }
 
 
-.opening-inner p {
+.opening-note {
 
-    margin-top: 22px;
+    margin:
+        20px
+        0
+        0;
+
+    font-size: 16px;
 
     opacity: 0.7;
 
-    font-size: 16px;
+    animation:
+        fadeUp 0.8s ease 0.65s both;
 }
 
 
-.opening-inner button {
-
-    margin-top: 8px;
+.surprise-button {
 
     width: 100%;
 
-    padding: 16px 20px;
+    margin-top: 20px;
+
+    padding:
+        16px
+        20px;
 
     border: none;
 
     border-radius: 999px;
 
-    background: white;
+    background: #ffffff;
 
-    color: #381522;
+    color: #351522;
 
     font-size: 16px;
 
@@ -177,19 +306,77 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.3);
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    animation:
+        fadeUp 0.8s ease 0.8s both,
+        buttonPulse 2.5s ease-in-out 2s infinite;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.surprise-button:hover {
+    transform: translateY(-3px);
+}
+
+
+.surprise-button:active {
+    transform: scale(0.95);
+}
+
+
+@keyframes buttonPulse {
+
+    0%, 100% {
+        box-shadow:
+            0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 10px 38px rgba(255,255,255,0.3);
+    }
+}
+
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
 .hide-opening {
-
     opacity: 0;
 }
 
 
-/* =========================
-   SECOND PAGE
-   ========================= */
+/* =========================================
+   MAIN PAGE
+   ========================================= */
 
 .surprise-page {
 
@@ -202,20 +389,19 @@ body {
     padding:
         45px
         18px
-        80px;
+        90px;
 
     background:
         linear-gradient(
             180deg,
-            #170d13,
-            #25121c,
-            #170d13
+            #150b11,
+            #27131e,
+            #150b11
         );
 }
 
 
 .show-page {
-
     display: block;
 }
 
@@ -226,17 +412,39 @@ body {
 
     max-width: 620px;
 
-    margin: 0 auto;
+    margin:
+        0
+        auto;
 
     text-align: center;
+
+    animation:
+        mainPageEnter 1s ease both;
+}
+
+
+@keyframes mainPageEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
 .top-icon {
 
-    font-size: 45px;
+    font-size: 46px;
 
     margin-bottom: 8px;
+
+    animation:
+        heartbeat 1.6s ease-in-out infinite;
 }
 
 
@@ -255,9 +463,9 @@ body {
     margin:
         15px
         auto
-        70px;
+        75px;
 
-    max-width: 520px;
+    max-width: 500px;
 
     font-size: 16px;
 
@@ -267,15 +475,18 @@ body {
 }
 
 
-/* =========================
-   MEMORY
-   ========================= */
+/* =========================================
+   MEMORY BLOCKS
+   ========================================= */
 
 .memory {
 
     width: 100%;
 
-    margin-bottom: 90px;
+    margin:
+        0
+        0
+        95px;
 
     display: flex;
 
@@ -296,19 +507,21 @@ body {
         auto
         0;
 
-    padding: 0 8px;
+    padding:
+        0
+        8px;
 
     font-size: 17px;
 
     line-height: 2;
 
-    color: #f5edf2;
+    color: #f4ebf0;
 }
 
 
-/* =========================
-   POLAROID
-   ========================= */
+/* =========================================
+   POLAROIDS
+   ========================================= */
 
 .polaroid {
 
@@ -319,32 +532,85 @@ body {
         12px
         22px;
 
-    background: #fff;
+    background: #ffffff;
 
     color: #2a1b21;
 
     border-radius: 3px;
 
     box-shadow:
-        0 20px 38px rgba(0,0,0,0.38);
+        0 20px 40px rgba(0, 0, 0, 0.4);
+
+    animation:
+        floatPolaroid 5s ease-in-out infinite;
 }
 
 
 .rotate-left {
 
     transform: rotate(-3deg);
+
+    animation:
+        floatLeft 5s ease-in-out infinite;
 }
 
 
 .rotate-right {
 
     transform: rotate(3deg);
+
+    animation:
+        floatRight 5s ease-in-out infinite;
 }
 
 
-/* =========================
+@keyframes floatPolaroid {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+@keyframes floatLeft {
+
+    0%, 100% {
+        transform:
+            rotate(-3deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(-3deg)
+            translateY(-7px);
+    }
+}
+
+
+@keyframes floatRight {
+
+    0%, 100% {
+        transform:
+            rotate(3deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(3deg)
+            translateY(-7px);
+    }
+}
+
+
+/* =========================================
    PHOTO PLACEHOLDER
-   ========================= */
+   ========================================= */
 
 .photo-placeholder {
 
@@ -360,11 +626,17 @@ body {
 
     align-items: center;
 
-    background: #d9d3d7;
+    background:
+        linear-gradient(
+            145deg,
+            #ddd7da,
+            #c9c1c6
+        );
 
-    border: 2px dashed #999097;
+    border:
+        2px dashed #958c92;
 
-    color: #584b52;
+    color: #564950;
 }
 
 
@@ -392,7 +664,7 @@ body {
 
     font-size: 13px;
 
-    opacity: 0.7;
+    opacity: 0.72;
 }
 
 
@@ -400,26 +672,21 @@ body {
 
     padding-top: 13px;
 
-    font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
     font-size: 16px;
 
-    font-weight: 600;
+    font-weight: 650;
 }
 
 
-/* =========================
-   FINAL
-   ========================= */
+/* =========================================
+   FINAL MESSAGE
+   ========================================= */
 
 .final-card {
 
     width: 100%;
 
-    margin-top: 40px;
+    margin-top: 25px;
 
     padding:
         45px
@@ -431,26 +698,47 @@ body {
     background:
         linear-gradient(
             145deg,
-            #452231,
+            #472332,
             #21131a
         );
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,0.4);
+        0 20px 48px rgba(0,0,0,0.4);
+
+    animation:
+        finalGlow 4s ease-in-out infinite;
+}
+
+
+@keyframes finalGlow {
+
+    0%, 100% {
+        box-shadow:
+            0 20px 48px rgba(0,0,0,0.4);
+    }
+
+    50% {
+        box-shadow:
+            0 20px 60px rgba(100,45,75,0.3);
+    }
 }
 
 
 .final-heart {
 
-    font-size: 58px;
+    font-size: 60px;
 
-    margin-bottom: 8px;
+    animation:
+        heartbeat 1.5s ease-in-out infinite;
 }
 
 
 .final-card h2 {
 
-    margin: 0 0 18px;
+    margin:
+        8px
+        0
+        18px;
 
     font-size: 31px;
 }
@@ -458,12 +746,12 @@ body {
 
 .final-card p {
 
+    max-width: 500px;
+
     margin:
         0
         auto
         20px;
-
-    max-width: 500px;
 
     font-size: 17px;
 
@@ -473,7 +761,7 @@ body {
 
 .final-title {
 
-    margin-top: 30px;
+    margin-top: 32px;
 
     font-size: 22px;
 
@@ -491,17 +779,18 @@ body {
 }
 
 
-/* =========================
-   PHONE
-   ========================= */
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 480px) {
 
     .opening-inner {
 
         padding:
-            38px
-            18px;
+            40px
+            18px
+            35px;
     }
 
 
@@ -538,15 +827,15 @@ body {
     }
 
 
-    .polaroid {
-
-        width: 90vw;
-    }
-
-
     .memory p {
 
         font-size: 16px;
+    }
+
+
+    .polaroid {
+
+        width: 90vw;
     }
 
 
@@ -556,6 +845,33 @@ body {
             38px
             16px
             42px;
+    }
+
+
+    .final-title {
+
+        font-size: 20px;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION FOR ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
     }
 }
 ```
