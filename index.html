@@ -4,118 +4,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>बुबाको लागि ❤️</title>
+    <title>Happy Father's Day ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- OPENING SURPRISE SCREEN -->
-    <section id="opening" class="opening">
+    <!-- =========================
+         INTRO / SURPRISE SCREEN
+         ========================= -->
 
-        <div class="opening-content">
-            <div class="big-heart">❤️</div>
+    <section id="intro" class="intro-screen">
 
-            <p class="small-text">एउटा सानो कुरा तपाईंको लागि...</p>
+        <div class="intro-card">
+
+            <div class="intro-heart">❤️</div>
+
+            <div class="english-title">
+                Happy Father's Day
+            </div>
+
+            <div class="little-text">
+                A little surprise for you...
+            </div>
 
             <h1>
-                बुबाको लागि<br>
-                एउटा सानो सरप्राइज
+                बुबा, तपाईंका लागि<br>
+                एउटा सानो सरप्राइज छ ❤️
             </h1>
 
-            <p class="hint">तयार हुनुहुन्छ? ❤️</p>
+            <p class="intro-subtext">
+                यो पूरा हेर्नुहोस्...
+            </p>
 
-            <button onclick="openSurprise()">
-                सरप्राइज खोल्नुहोस् ❤️
+            <button class="surprise-button" onclick="startSurprise()">
+                SURPRISE खोल्नुहोस् ❤️
             </button>
+
         </div>
 
     </section>
 
 
-    <!-- MAIN WEBSITE -->
-    <main id="mainContent" class="main-content">
+    <!-- =========================
+         MAIN SURPRISE
+         ========================= -->
 
-        <div class="top-heart">❤️</div>
+    <main id="surprise" class="surprise-page">
 
-        <h2>बुबा, यो तपाईंको लागि हो</h2>
+        <div class="page-top">
 
-        <p>
-            बुबा, तपाईंले मेरो लागि गर्नुभएको सबै कुराको लागि
-            म तपाईंलाई धेरै धेरै धन्यवाद भन्न चाहन्छु।
-        </p>
+            <div class="small-heart">❤️</div>
 
-
-        <!-- PHOTO 1 -->
-        <div class="photo-card">
-            <img src="photo1.jpg" alt="हाम्रो सम्झना">
-        </div>
-
-        <p>
-            तपाईंले मेरो भविष्य राम्रो बनाउन र मलाई सधैं
-            अगाडि बढ्न सिकाउन धेरै मेहनत गर्नुभएको छ।
-        </p>
-
-
-        <!-- PHOTO 2 -->
-        <div class="photo-card">
-            <img src="photo2.jpg" alt="बुबासँगको सम्झना">
-        </div>
-
-        <p>
-            कहिलेकाहीँ म तपाईंको कुरा नमाने पनि,
-            तपाईंले मेरो लागि राम्रो सोचिरहनुभएको हुन्छ
-            भन्ने कुरा म बुझ्छु। ❤️
-        </p>
-
-
-        <!-- PHOTO 3 -->
-        <div class="photo-card">
-            <img src="photo3.jpg" alt="मिठो सम्झना">
-        </div>
-
-        <p>
-            तपाईं मेरो लागि केवल बुबा मात्र होइन,
-            मेरो जीवनको सबैभन्दा ठूलो प्रेरणा हुनुहुन्छ।
-        </p>
-
-
-        <div class="final-message">
-
-            <div class="big-heart">❤️</div>
-
-            <h2>म तपाईंलाई धेरै माया गर्छु बुबा।</h2>
+            <h2>
+                बुबा, यो तपाईंको लागि हो
+            </h2>
 
             <p>
-                तपाईं सधैं स्वस्थ, खुसी र मुस्कुराइरहनुहोस्।
+                तपाईंको लागि तयार गरेको एउटा सानो सम्झना...
             </p>
-
-            <h3>Happy Father's Day, Dad! ❤️</h3>
 
         </div>
 
 
-        <p class="footer">
-            तपाईंको छोराबाट ❤️
-        </p>
+        <!-- =========================
+             MEMORY 1
+             ========================= -->
+
+        <section class="memory-section">
+
+            <div class="polaroid placeholder">
+
+                <div class="photo-placeholder">
+                    <span>📸</span>
+                    <strong>PHOTO 1</strong>
+                    <small>तपाईंको फोटो यहाँ</small>
+                </div>
+
+                <div class="polaroid-caption">
+                    एउटा सुन्दर सम्झना ❤️
+                </div>
+
+            </div>
+
+            <p class="memory-text">
+                बुबा, तपाईंले मेरो लागि गर्नुभएको
+                सबै कुराको लागि म तपाईंलाई
+                धेरै धेरै धन्यवाद भन्न चाहन्छु।
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             MEMORY 2
+             ========================= -->
+
+        <section class="memory-section">
+
+            <div class="polaroid placeholder tilted-left">
+
+                <div class="photo-placeholder">
+                    <span>📸</span>
+                    <strong>PHOTO 2</strong>
+                    <small>तपाईंको फोटो यहाँ</small>
+                </div>
+
+                <div class="polaroid-caption">
+                    हाम्रो अर्को मिठो सम्झना ❤️
+                </div>
+
+            </div>
+
+            <p class="memory-text">
+                तपाईंले मलाई सधैं राम्रो बाटोमा
+                हिँड्न र अगाडि बढ्न सिकाउनुभएको छ।
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             MEMORY 3
+             ========================= -->
+
+        <section class="memory-section">
+
+            <div class="polaroid placeholder tilted-right">
+
+                <div class="photo-placeholder">
+                    <span>📸</span>
+                    <strong>PHOTO 3</strong>
+                    <small>तपाईंको फोटो यहाँ</small>
+                </div>
+
+                <div class="polaroid-caption">
+                    त्यो विशेष पल ❤️
+                </div>
+
+            </div>
+
+            <p class="memory-text">
+                कहिलेकाहीँ म तपाईंको कुरा
+                नमाने पनि, तपाईंले मेरो लागि
+                सधैं राम्रो सोचिरहनुभएको हुन्छ।
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             MEMORY 4
+             ========================= -->
+
+        <section class="memory-section">
+
+            <div class="polaroid placeholder">
+
+                <div class="photo-placeholder">
+                    <span>📸</span>
+                    <strong>PHOTO 4</strong>
+                    <small>तपाईंको फोटो यहाँ</small>
+                </div>
+
+                <div class="polaroid-caption">
+                    एउटा अमूल्य पल ❤️
+                </div>
+
+            </div>
+
+            <p class="memory-text">
+                तपाईं मेरो लागि केवल बुबा मात्र होइन,
+                तपाईं मेरो जीवनको सबैभन्दा ठूलो
+                प्रेरणा हुनुहुन्छ।
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             MEMORY 5
+             ========================= -->
+
+        <section class="memory-section">
+
+            <div class="polaroid placeholder tilted-left">
+
+                <div class="photo-placeholder">
+                    <span>📸</span>
+                    <strong>PHOTO 5</strong>
+                    <small>तपाईंको फोटो यहाँ</small>
+                </div>
+
+                <div class="polaroid-caption">
+                    सधैं सम्झिरहने पल ❤️
+                </div>
+
+            </div>
+
+            <p class="memory-text">
+                तपाईंले मलाई दिएको माया,
+                साथ र हौसलाको कुनै मूल्य छैन।
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL MESSAGE
+             ========================= -->
+
+        <section class="final-section">
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <h2>
+                बुबा...
+            </h2>
+
+            <p>
+                म तपाईंलाई शब्दमा बयान गर्न
+                नसक्ने गरी धेरै माया गर्छु।
+            </p>
+
+            <p>
+                तपाईं सधैं स्वस्थ, खुसी र
+                मुस्कुराइरहनुहोस्।
+            </p>
+
+            <h3>
+                Happy Father's Day, Dad! ❤️
+            </h3>
+
+            <p class="from-son">
+                तपाईंको छोराबाट ❤️
+            </p>
+
+        </section>
 
     </main>
 
 
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
     <script>
-        function openSurprise() {
 
-            document.getElementById("opening").style.display = "none";
+        function startSurprise() {
 
-            document.getElementById("mainContent").style.display = "block";
+            const intro = document.getElementById("intro");
+            const surprise = document.getElementById("surprise");
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            intro.style.opacity = "0";
+
+            setTimeout(function () {
+
+                intro.style.display = "none";
+
+                surprise.style.display = "block";
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }, 600);
         }
+
     </script>
 
 </body>
