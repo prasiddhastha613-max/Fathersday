@@ -6,6 +6,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Father's Day ❤️</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+           PHOTO LIGHTBOX
+           ========================= */
+
+        .photo-link {
+            display: block;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .photo-link img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .photo-link:hover img {
+            transform: scale(1.015);
+            filter: brightness(1.06);
+        }
+
+        .photo-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background: rgba(10, 3, 8, 0.92);
+            backdrop-filter: blur(10px);
+        }
+
+        .photo-lightbox.show {
+            display: flex;
+            animation: lightboxFade 0.25s ease both;
+        }
+
+        .lightbox-image {
+            max-width: 92vw;
+            max-height: 88vh;
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.75),
+                0 0 35px rgba(255, 150, 180, 0.12);
+
+            animation: photoZoom 0.3s ease both;
+        }
+
+        .lightbox-close {
+            position: absolute;
+
+            top: 18px;
+            right: 20px;
+
+            width: 48px;
+            height: 48px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+
+            font-size: 28px;
+            line-height: 48px;
+
+            cursor: pointer;
+
+            backdrop-filter: blur(8px);
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.08);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-hint {
+            position: absolute;
+
+            bottom: 18px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            padding: 8px 14px;
+
+            border-radius: 999px;
+
+            background: rgba(0, 0, 0, 0.35);
+
+            color: rgba(255, 255, 255, 0.72);
+
+            font-size: 13px;
+
+            pointer-events: none;
+        }
+
+        @keyframes lightboxFade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes photoZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.94);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-lightbox {
+                padding: 12px;
+            }
+
+            .lightbox-image {
+                max-width: 96vw;
+                max-height: 82vh;
+            }
+
+            .lightbox-close {
+                top: 12px;
+                right: 12px;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                font-size: 25px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -87,13 +245,12 @@
 
                 <a
                     href="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/1425d5cf-3a0b-490e-817f-8394303e1df9.jfif"
-                    target="_blank"
                     class="photo-link"
+                    data-photo="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/1425d5cf-3a0b-490e-817f-8394303e1df9.jfif"
                 >
                     <img
                         src="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/1425d5cf-3a0b-490e-817f-8394303e1df9.jfif"
                         alt="PHOTO 1"
-                        style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;"
                     >
                 </a>
 
@@ -120,13 +277,12 @@
 
                 <a
                     href="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/66fd9b73-110c-409b-b2d9-bf0f691179e9.jfif"
-                    target="_blank"
                     class="photo-link"
+                    data-photo="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/66fd9b73-110c-409b-b2d9-bf0f691179e9.jfif"
                 >
                     <img
                         src="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/66fd9b73-110c-409b-b2d9-bf0f691179e9.jfif"
                         alt="PHOTO 2"
-                        style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;"
                     >
                 </a>
 
@@ -153,13 +309,12 @@
 
                 <a
                     href="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/6905a287-c97b-4c8e-af3a-034b5d848128.jfif"
-                    target="_blank"
                     class="photo-link"
+                    data-photo="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/6905a287-c97b-4c8e-af3a-034b5d848128.jfif"
                 >
                     <img
                         src="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/6905a287-c97b-4c8e-af3a-034b5d848128.jfif"
                         alt="PHOTO 3"
-                        style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;"
                     >
                 </a>
 
@@ -186,13 +341,12 @@
 
                 <a
                     href="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/7aca5446-7bf1-4c18-805a-db94ee64c071.jfif"
-                    target="_blank"
                     class="photo-link"
+                    data-photo="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/7aca5446-7bf1-4c18-805a-db94ee64c071.jfif"
                 >
                     <img
                         src="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/7aca5446-7bf1-4c18-805a-db94ee64c071.jfif"
                         alt="PHOTO 4"
-                        style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;"
                     >
                 </a>
 
@@ -219,13 +373,12 @@
 
                 <a
                     href="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/7c7cbc53-1768-401c-9f6e-e1c8e703032e.jfif"
-                    target="_blank"
                     class="photo-link"
+                    data-photo="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/7c7cbc53-1768-401c-9f6e-e1c8e703032e.jfif"
                 >
                     <img
                         src="https://raw.githubusercontent.com/prasiddhastha613-max/Fathersday/8dcdbd29abef283f1a07dadc57242ed3d63a478c/7c7cbc53-1768-401c-9f6e-e1c8e703032e.jfif"
                         alt="PHOTO 5"
-                        style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;"
                     >
                 </a>
 
@@ -280,20 +433,62 @@
 </section>
 
 
+<!-- PHOTO LIGHTBOX -->
+
+<div
+    id="photoLightbox"
+    class="photo-lightbox"
+    aria-hidden="true"
+>
+
+    <button
+        id="lightboxClose"
+        class="lightbox-close"
+        type="button"
+        aria-label="Close photo"
+    >
+        ×
+    </button>
+
+    <img
+        id="lightboxImage"
+        class="lightbox-image"
+        src=""
+        alt="Full size photo"
+    >
+
+    <div class="lightbox-hint">
+        बाहिर थिचेर बन्द गर्नुहोस् ❤️
+    </div>
+
+</div>
+
+
 <script>
+
+    /* =========================
+       HEART / SPARKLE BURST
+       ========================= */
 
     function createBurst() {
 
-        const symbols = ["❤️", "♡", "✦", "✧", "✨"];
+        const symbols =
+            ["❤️", "♡", "✦", "✧", "✨"];
 
         for (let i = 20; i > 0; i--) {
 
-            const particle = document.createElement("span");
+            const particle =
+                document.createElement("span");
 
-            particle.className = "burst-particle";
+            particle.className =
+                "burst-particle";
 
             particle.textContent =
-                symbols[Math.floor(Math.random() * symbols.length)];
+                symbols[
+                    Math.floor(
+                        Math.random() * symbols.length
+                    )
+                ];
 
             particle.style.setProperty(
                 "--x",
@@ -310,7 +505,9 @@
                 (Math.random() * 240 - 120) + "deg"
             );
 
-            document.body.appendChild(particle);
+            document.body.appendChild(
+                particle
+            );
 
             setTimeout(function () {
                 particle.remove();
@@ -319,30 +516,49 @@
     }
 
 
+    /* =========================
+       OPEN SURPRISE
+       ========================= */
+
     function openSurprise() {
 
         const opening =
-            document.getElementById("openingScreen");
+            document.getElementById(
+                "openingScreen"
+            );
 
         const page =
-            document.getElementById("surprisePage");
+            document.getElementById(
+                "surprisePage"
+            );
 
         const button =
-            document.getElementById("surpriseButton");
+            document.getElementById(
+                "surpriseButton"
+            );
 
-        button.classList.add("clicked");
+        button.classList.add(
+            "clicked"
+        );
 
         createBurst();
 
         setTimeout(function () {
-            opening.classList.add("hide");
+
+            opening.classList.add(
+                "hide"
+            );
+
         }, 150);
 
         setTimeout(function () {
 
-            opening.style.display = "none";
+            opening.style.display =
+                "none";
 
-            page.classList.add("show");
+            page.classList.add(
+                "show"
+            );
 
             window.scrollTo({
                 top: 0,
@@ -354,25 +570,37 @@
     }
 
 
-    /* SCROLL REVEAL */
+    /* =========================
+       SCROLL REVEAL
+       ========================= */
 
     const revealItems =
-        document.querySelectorAll(".reveal");
+        document.querySelectorAll(
+            ".reveal"
+        );
 
     const observer =
         new IntersectionObserver(
             function(entries) {
 
-                entries.forEach(function(entry) {
+                entries.forEach(
+                    function(entry) {
 
-                    if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                        entry.target.classList.add("visible");
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
-                        observer.unobserve(entry.target);
+                            observer.unobserve(
+                                entry.target
+                            );
+                        }
+
                     }
-
-                });
+                );
 
             },
             {
@@ -381,16 +609,136 @@
         );
 
 
-    revealItems.forEach(function(item) {
-        observer.observe(item);
-    });
+    revealItems.forEach(
+        function(item) {
+            observer.observe(item);
+        }
+    );
 
 
-    /* BUTTON */
+    /* =========================
+       OPENING BUTTON
+       ========================= */
 
     document
         .getElementById("surpriseButton")
-        .addEventListener("click", openSurprise);
+        .addEventListener(
+            "click",
+            openSurprise
+        );
+
+
+    /* =========================
+       PHOTO LIGHTBOX
+       ========================= */
+
+    const lightbox =
+        document.getElementById(
+            "photoLightbox"
+        );
+
+    const lightboxImage =
+        document.getElementById(
+            "lightboxImage"
+        );
+
+    const lightboxClose =
+        document.getElementById(
+            "lightboxClose"
+        );
+
+    const photoLinks =
+        document.querySelectorAll(
+            ".photo-link"
+        );
+
+
+    photoLinks.forEach(
+        function(link) {
+
+            link.addEventListener(
+                "click",
+                function(event) {
+
+                    event.preventDefault();
+
+                    const imageUrl =
+                        link.getAttribute(
+                            "data-photo"
+                        );
+
+                    lightboxImage.src =
+                        imageUrl;
+
+                    lightbox.classList.add(
+                        "show"
+                    );
+
+                    lightbox.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+                    document.body.style.overflow =
+                        "hidden";
+                }
+            );
+
+        }
+    );
+
+
+    function closeLightbox() {
+
+        lightbox.classList.remove(
+            "show"
+        );
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        lightboxImage.src =
+            "";
+
+        document.body.style.overflow =
+            "";
+    }
+
+
+    lightboxClose.addEventListener(
+        "click",
+        closeLightbox
+    );
+
+
+    lightbox.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === lightbox
+            ) {
+                closeLightbox();
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+                closeLightbox();
+            }
+
+        }
+    );
 
 </script>
 
