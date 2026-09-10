@@ -11,6 +11,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* =========================
    DECORATIONS
    ========================= */
@@ -35,6 +36,7 @@ body {
 .right-decoration {
     right: 20px;
 }
+
 
 /* =========================
    OPENING SCREEN
@@ -75,8 +77,12 @@ body {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.15); }
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.15);
+    }
 }
 
 .english-title {
@@ -128,6 +134,7 @@ button#surpriseButton.clicked {
     transform: scale(0.95);
 }
 
+
 /* =========================
    BURST PARTICLES
    ========================= */
@@ -149,9 +156,16 @@ button#surpriseButton.clicked {
     }
     100% {
         opacity: 0;
-        transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.2) rotate(var(--r));
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.2)
+            rotate(var(--r));
     }
 }
+
 
 /* =========================
    SURPRISE PAGE
@@ -193,6 +207,7 @@ button#surpriseButton.clicked {
     margin-bottom: 50px;
 }
 
+
 /* =========================
    POLAROID MEMORY CARDS
    ========================= */
@@ -211,13 +226,11 @@ button#surpriseButton.clicked {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     width: 280px;
     margin-bottom: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .polaroid:hover {
-    transform: scale(1.04) rotate(0deg) !important;
-    box-shadow: 0 15px 35px rgba(255, 184, 210, 0.2);
+    transform: scale(1.03) rotate(0deg) !important;
 }
 
 .tilted-left {
@@ -228,20 +241,25 @@ button#surpriseButton.clicked {
     transform: rotate(3deg);
 }
 
-.polaroid-img {
+.photo-placeholder {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
+    height: 280px;
+    background-color: #2b1f26;
     border-radius: 2px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e3b3c8;
+    font-size: 13px;
+    text-align: center;
+    padding: 15px;
 }
 
 .caption {
     color: #222222;
     font-size: 14px;
     font-weight: 600;
-    margin-top: 12px;
-    text-align: center;
+    margin-top: 15px;
 }
 
 .memory p {
@@ -250,6 +268,7 @@ button#surpriseButton.clicked {
     color: #e6d0dc;
     max-width: 400px;
 }
+
 
 /* =========================
    FINAL CARD
@@ -295,6 +314,7 @@ button#surpriseButton.clicked {
     color: #b592a3;
 }
 
+
 /* =========================
    SCROLL REVEAL ANIMATION
    ========================= */
@@ -310,102 +330,13 @@ button#surpriseButton.clicked {
     transform: translateY(0);
 }
 
+
 /* =========================
-   POPUP MODAL
+   RESPONSIVE
    ========================= */
 
-.photo-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 3000;
-    background: rgba(10, 4, 8, 0.88);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.photo-modal.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 38px;
-    color: white;
-    cursor: pointer;
-    z-index: 3010;
-}
-
-.modal-content-container {
-    background: #25121c;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    width: 100%;
-    max-width: 850px;
-    display: flex;
-    overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-}
-
-.modal-left {
-    flex: 1;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-left img {
-    width: 100%;
-    max-height: 70vh;
-    object-fit: contain;
-    display: block;
-}
-
-.modal-right {
-    flex: 1;
-    padding: 35px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    color: white;
-}
-
-.modal-caption {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #ffb8d2;
-}
-
-.modal-text {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #f5edf2;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .side-decoration {
         display: none;
-    }
-
-    .modal-content-container {
-        flex-direction: column;
-        max-height: 85vh;
-        overflow-y: auto;
-    }
-    
-    .modal-right {
-        padding: 20px;
-        text-align: center;
     }
 }
