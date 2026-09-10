@@ -1,6 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #12050b;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
 /* =========================
-   POLAROID IMAGES
+   DECORATIONS
    ========================= */
+
+.side-decoration {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 20px;
+    color: rgba(255, 184, 210, 0.3);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.left-decoration {
+    left: 20px;
+}
+
+.right-decoration {
+    right: 20px;
+}
+
+/* =========================
+   OPENING SCREEN
+   ========================= */
+
+.opening-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: radial-gradient(circle, #2d0b1e 0%, #12050b 100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.opening-screen.hide {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.opening-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 24px;
+    max-width: 450px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.opening-heart {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+.english-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ffb8d2;
+    margin-bottom: 5px;
+}
+
+.opening-subtitle {
+    font-size: 13px;
+    color: #a8929e;
+    margin-bottom: 25px;
+}
+
+.opening-card h1 {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.opening-text {
+    font-size: 14px;
+    color: #d1b8c6;
+    margin-bottom: 30px;
+}
+
+button#surpriseButton {
+    background: linear-gradient(135deg, #e63946, #b5179e);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button#surpriseButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.6);
+}
+
+button#surpriseButton.clicked {
+    transform: scale(0.95);
+}
+
+/* =========================
+   BURST PARTICLES
+   ========================= */
+
+.burst-particle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    font-size: 20px;
+    animation: flyOut 1s ease-out forwards;
+}
+
+@keyframes flyOut {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.2) rotate(var(--r));
+    }
+}
+
+/* =========================
+   SURPRISE PAGE
+   ========================= */
+
+.surprise-page {
+    display: none;
+    min-height: 100vh;
+    padding: 60px 20px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.surprise-page.show {
+    display: block;
+    opacity: 1;
+}
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.top-heart {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.content h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #ffb8d2;
+}
+
+.intro-message {
+    font-size: 15px;
+    color: #ccaab8;
+    margin-bottom: 50px;
+}
+
+/* =========================
+   POLAROID MEMORY CARDS
+   ========================= */
+
+.memory {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.polaroid {
+    background: #ffffff;
+    padding: 15px 15px 20px 15px;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 280px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid:hover {
+    transform: scale(1.04) rotate(0deg) !important;
+    box-shadow: 0 15px 35px rgba(255, 184, 210, 0.2);
+}
+
+.tilted-left {
+    transform: rotate(-3deg);
+}
+
+.tilted-right {
+    transform: rotate(3deg);
+}
 
 .polaroid-img {
     width: 100%;
@@ -10,9 +236,82 @@
     display: block;
 }
 
+.caption {
+    color: #222222;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.memory p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #e6d0dc;
+    max-width: 400px;
+}
 
 /* =========================
-   CLICKABLE POPUP MODAL
+   FINAL CARD
+   ========================= */
+
+.final-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 40px 25px;
+    margin-top: 80px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.final-heart {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.final-card h2 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.final-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #dfc8d5;
+    margin-bottom: 15px;
+}
+
+.final-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffb8d2;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.signature {
+    font-size: 15px;
+    color: #b592a3;
+}
+
+/* =========================
+   SCROLL REVEAL ANIMATION
+   ========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   POPUP MODAL
    ========================= */
 
 .photo-modal {
@@ -43,7 +342,6 @@
     color: white;
     cursor: pointer;
     z-index: 3010;
-    line-height: 1;
 }
 
 .modal-content-container {
@@ -54,7 +352,7 @@
     max-width: 850px;
     display: flex;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
 }
 
 .modal-left {
@@ -96,6 +394,10 @@
 }
 
 @media (max-width: 768px) {
+    .side-decoration {
+        display: none;
+    }
+
     .modal-content-container {
         flex-direction: column;
         max-height: 85vh;
