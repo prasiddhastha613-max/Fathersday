@@ -87,7 +87,7 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid" onclick="openModal(this)">
+                <div class="polaroid" onclick="openModal('photo1.jpg', 'एउटा सुन्दर सम्झना ❤️', 'बुबा, तपाईंले मेरो लागि गर्नुभएको सबै कुराको लागि म तपाईंलाई धेरै धेरै धन्यवाद भन्न चाहन्छु।')">
 
                     <img src="photo1.jpg" alt="Memory 1" class="polaroid-img">
 
@@ -110,7 +110,7 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid tilted-left" onclick="openModal(this)">
+                <div class="polaroid tilted-left" onclick="openModal('photo2.jpg', 'हाम्रो अर्को मिठो सम्झना ❤️', 'तपाईंले मलाई सधैं अगाडि बढ्न, मेहनत गर्न र राम्रो मान्छे बन्न सिकाउनुभएको छ।')">
 
                     <img src="photo2.jpg" alt="Memory 2" class="polaroid-img">
 
@@ -133,7 +133,7 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid tilted-right" onclick="openModal(this)">
+                <div class="polaroid tilted-right" onclick="openModal('photo3.jpg', 'त्यो विशेष पल ❤️', 'कहिलेकाहीँ म तपाईंको कुरा नमाने पनि, तपाईंले मेरो लागि सधैं राम्रो सोचिरहनुभएको हुन्छ।')">
 
                     <img src="photo3.jpg" alt="Memory 3" class="polaroid-img">
 
@@ -156,7 +156,7 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid" onclick="openModal(this)">
+                <div class="polaroid" onclick="openModal('photo4.jpg', 'एउटा अमूल्य पल ❤️', 'तपाईं मेरो लागि केवल बुबा मात्र होइन, मेरो जीवनको सबैभन्दा ठूलो प्रेरणा हुनुहुन्छ।')">
 
                     <img src="photo4.jpg" alt="Memory 4" class="polaroid-img">
 
@@ -179,7 +179,7 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid tilted-left" onclick="openModal(this)">
+                <div class="polaroid tilted-left" onclick="openModal('photo5.jpg', 'सधैं सम्झिरहने पल ❤️', 'तपाईंले मलाई दिएको माया, साथ र हौसलाको कुनै मूल्य छैन।')">
 
                     <img src="photo5.jpg" alt="Memory 5" class="polaroid-img">
 
@@ -201,7 +201,7 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid tilted-right" onclick="openModal(this)">
+                <div class="polaroid tilted-right" onclick="openModal('photo6.jpg', 'विशेष क्षण ❤️', 'तपाईंको सपनाहरू पुरा गर्न म सधैं सच्चा प्रयास गरिरहनेछु।')">
 
                     <img src="photo6.jpg" alt="Memory 6" class="polaroid-img">
 
@@ -257,7 +257,7 @@
 
     <!-- PHOTO MODAL POPUP -->
     <div id="photoModal" class="photo-modal" onclick="closeModal()">
-        <span class="close-modal">&times;</span>
+        <span class="close-modal" onclick="closeModal()">&times;</span>
         <div class="modal-content-container" onclick="event.stopPropagation()">
             <div class="modal-left">
                 <img id="modalImage" src="" alt="Enlarged Photo">
@@ -374,29 +374,17 @@
             observer.observe(item);
         });
 
-        /* MODAL FUNCTIONS */
+        /* MODAL POPUP FUNCTIONS */
 
-        function openModal(element) {
-            const modal = document.getElementById("photoModal");
-            const modalImg = document.getElementById("modalImage");
-            const modalCaption = document.getElementById("modalCaption");
-            const modalText = document.getElementById("modalText");
-
-            const img = element.querySelector("img");
-            const caption = element.querySelector(".caption");
-            const memorySection = element.closest(".memory");
-            const text = memorySection.querySelector("p");
-
-            modalImg.src = img.src;
-            modalCaption.innerText = caption.innerText;
-            modalText.innerText = text.innerText;
-
-            modal.classList.add("active");
+        function openModal(imageSrc, captionText, descriptionText) {
+            document.getElementById("modalImage").src = imageSrc;
+            document.getElementById("modalCaption").innerText = captionText;
+            document.getElementById("modalText").innerText = descriptionText;
+            document.getElementById("photoModal").classList.add("active");
         }
 
         function closeModal() {
-            const modal = document.getElementById("photoModal");
-            modal.classList.remove("active");
+            document.getElementById("photoModal").classList.remove("active");
         }
 
     </script>
