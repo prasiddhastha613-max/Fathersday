@@ -87,13 +87,9 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid">
+                <div class="polaroid" onclick="openModal(this)">
 
-                    <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <strong>PHOTO 1</strong>
-                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
-                    </div>
+                    <img src="photo1.jpg" alt="Memory 1" class="polaroid-img">
 
                     <div class="caption">
                         एउटा सुन्दर सम्झना ❤️
@@ -114,13 +110,9 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid tilted-left">
+                <div class="polaroid tilted-left" onclick="openModal(this)">
 
-                    <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <strong>PHOTO 2</strong>
-                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
-                    </div>
+                    <img src="photo2.jpg" alt="Memory 2" class="polaroid-img">
 
                     <div class="caption">
                         हाम्रो अर्को मिठो सम्झना ❤️
@@ -141,13 +133,9 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid tilted-right">
+                <div class="polaroid tilted-right" onclick="openModal(this)">
 
-                    <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <strong>PHOTO 3</strong>
-                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
-                    </div>
+                    <img src="photo3.jpg" alt="Memory 3" class="polaroid-img">
 
                     <div class="caption">
                         त्यो विशेष पल ❤️
@@ -168,13 +156,9 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid">
+                <div class="polaroid" onclick="openModal(this)">
 
-                    <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <strong>PHOTO 4</strong>
-                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
-                    </div>
+                    <img src="photo4.jpg" alt="Memory 4" class="polaroid-img">
 
                     <div class="caption">
                         एउटा अमूल्य पल ❤️
@@ -195,13 +179,9 @@
 
             <section class="memory reveal">
 
-                <div class="polaroid tilted-left">
+                <div class="polaroid tilted-left" onclick="openModal(this)">
 
-                    <div class="photo-placeholder">
-                        <div class="camera">📷</div>
-                        <strong>PHOTO 5</strong>
-                        <small>फोटो पछि यहाँ राख्नुहोस्</small>
-                    </div>
+                    <img src="photo5.jpg" alt="Memory 5" class="polaroid-img">
 
                     <div class="caption">
                         सधैं सम्झिरहने पल ❤️
@@ -212,6 +192,28 @@
                 <p>
                     तपाईंले मलाई दिएको माया,
                     साथ र हौसलाको कुनै मूल्य छैन।
+                </p>
+
+            </section>
+
+
+            <!-- PHOTO 6 -->
+
+            <section class="memory reveal">
+
+                <div class="polaroid tilted-right" onclick="openModal(this)">
+
+                    <img src="photo6.jpg" alt="Memory 6" class="polaroid-img">
+
+                    <div class="caption">
+                        विशेष क्षण ❤️
+                    </div>
+
+                </div>
+
+                <p>
+                    तपाईंको सपनाहरू पुरा गर्न म सधैं
+                    सच्चा प्रयास गरिरहनेछु।
                 </p>
 
             </section>
@@ -252,6 +254,20 @@
         </div>
 
     </section>
+
+    <!-- PHOTO MODAL POPUP -->
+    <div id="photoModal" class="photo-modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content-container" onclick="event.stopPropagation()">
+            <div class="modal-left">
+                <img id="modalImage" src="" alt="Enlarged Photo">
+            </div>
+            <div class="modal-right">
+                <div id="modalCaption" class="modal-caption"></div>
+                <div id="modalText" class="modal-text"></div>
+            </div>
+        </div>
+    </div>
 
 
     <script>
@@ -357,6 +373,31 @@
         revealItems.forEach(function(item) {
             observer.observe(item);
         });
+
+        /* MODAL FUNCTIONS */
+
+        function openModal(element) {
+            const modal = document.getElementById("photoModal");
+            const modalImg = document.getElementById("modalImage");
+            const modalCaption = document.getElementById("modalCaption");
+            const modalText = document.getElementById("modalText");
+
+            const img = element.querySelector("img");
+            const caption = element.querySelector(".caption");
+            const memorySection = element.closest(".memory");
+            const text = memorySection.querySelector("p");
+
+            modalImg.src = img.src;
+            modalCaption.innerText = caption.innerText;
+            modalText.innerText = text.innerText;
+
+            modal.classList.add("active");
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("photoModal");
+            modal.classList.remove("active");
+        }
 
     </script>
 
