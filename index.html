@@ -5,254 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Father's Day ❤️</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small inline style fix to make sure images show */
+        .polaroid-img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 2px;
+            display: block;
+            background: #f0f0f0; /* Gray background if image fails */
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- SIDE DECORATIONS -->
     <div class="side-decoration left-decoration">
-        <span>✦</span>
-        <span>♡</span>
-        <span>✧</span>
-        <span>♡</span>
-        <span>✦</span>
+        <span>✦</span><span>♡</span><span>✧</span><span>♡</span><span>✦</span>
     </div>
-
     <div class="side-decoration right-decoration">
-        <span>♡</span>
-        <span>✧</span>
-        <span>✦</span>
-        <span>♡</span>
-        <span>✧</span>
+        <span>♡</span><span>✧</span><span>✦</span><span>♡</span><span>✧</span>
     </div>
 
-
-    <!-- =========================
-         FIRST SCREEN
-         ========================= -->
-
+    <!-- FIRST SCREEN -->
     <section id="openingScreen" class="opening-screen">
-
         <div class="opening-card">
-
             <div class="opening-heart">❤️</div>
-
-            <div class="english-title">
-                Happy Father's Day
-            </div>
-
-            <div class="opening-subtitle">
-                A little surprise for you...
-            </div>
-
-            <h1>
-                बुबा,<br>
-                तपाईंका लागि एउटा सानो सरप्राइज छ ❤️
-            </h1>
-
-            <p class="opening-text">
-                तपाईंले यो खोल्नै पर्छ...
-            </p>
-
-            <button id="surpriseButton" onclick="openSurprise()">
-                SURPRISE खोल्नुहोस् ❤️
-            </button>
-
+            <div class="english-title">Happy Father's Day</div>
+            <div class="opening-subtitle">A little surprise for you...</div>
+            <h1>बुबा,<br>तपाईंका लागि एउटा सानो सरप्राइज छ ❤️</h1>
+            <p class="opening-text">तपाईंले यो खोल्नै पर्छ...</p>
+            <button id="surpriseButton" onclick="openSurprise()">SURPRISE खोल्नुहोस् ❤️</button>
         </div>
-
     </section>
 
-
-    <!-- =========================
-         SECOND PAGE
-         ========================= -->
-
+    <!-- SECOND PAGE -->
     <section id="surprisePage" class="surprise-page">
-
         <div class="content">
-
             <div class="top-heart">❤️</div>
-
-            <h2>
-                बुबा, यो तपाईंको लागि हो
-            </h2>
-
-            <p class="intro-message">
-                तपाईंको लागि तयार गरेको केही सम्झना
-                र केही मनका शब्दहरू...
-            </p>
-
+            <h2>बुबा, यो तपाईंको लागि हो</h2>
+            <p class="intro-message">तपाईंको लागि तयार गरेको केही सम्झना र केही मनका शब्दहरू...</p>
 
             <!-- PHOTO 1 -->
-
             <section class="memory reveal">
-
                 <div class="polaroid" onclick="openModal('photo1.jpg', 'एउटा सुन्दर सम्झना ❤️', 'बुबा, तपाईंले मेरो लागि गर्नुभएको सबै कुराको लागि म तपाईंलाई धेरै धेरै धन्यवाद भन्न चाहन्छु।')">
-
                     <img src="photo1.jpg" alt="Memory 1" class="polaroid-img">
-
-                    <div class="caption">
-                        एउटा सुन्दर सम्झना ❤️
-                    </div>
-
+                    <div class="caption">एउटा सुन्दर सम्झना ❤️</div>
                 </div>
-
-                <p>
-                    बुबा, तपाईंले मेरो लागि गर्नुभएको
-                    सबै कुराको लागि म तपाईंलाई
-                    धेरै धेरै धन्यवाद भन्न चाहन्छु।
-                </p>
-
+                <p>बुबा, तपाईंले मेरो लागि गर्नुभएको सबै कुराको लागि म तपाईंलाई धेरै धेरै धन्यवाद भन्न चाहन्छु।</p>
             </section>
-
 
             <!-- PHOTO 2 -->
-
             <section class="memory reveal">
-
                 <div class="polaroid tilted-left" onclick="openModal('photo2.jpg', 'हाम्रो अर्को मिठो सम्झना ❤️', 'तपाईंले मलाई सधैं अगाडि बढ्न, मेहनत गर्न र राम्रो मान्छे बन्न सिकाउनुभएको छ।')">
-
                     <img src="photo2.jpg" alt="Memory 2" class="polaroid-img">
-
-                    <div class="caption">
-                        हाम्रो अर्को मिठो सम्झना ❤️
-                    </div>
-
+                    <div class="caption">हाम्रो अर्को मिठो सम्झना ❤️</div>
                 </div>
-
-                <p>
-                    तपाईंले मलाई सधैं अगाडि बढ्न,
-                    मेहनत गर्न र राम्रो मान्छे बन्न
-                    सिकाउनुभएको छ।
-                </p>
-
+                <p>तपाईंले मलाई सधैं अगाडि बढ्न, मेहनत गर्न र राम्रो मान्छे बन्न सिकाउनुभएको छ।</p>
             </section>
-
 
             <!-- PHOTO 3 -->
-
             <section class="memory reveal">
-
                 <div class="polaroid tilted-right" onclick="openModal('photo3.jpg', 'त्यो विशेष पल ❤️', 'कहिलेकाहीँ म तपाईंको कुरा नमाने पनि, तपाईंले मेरो लागि सधैं राम्रो सोचिरहनुभएको हुन्छ।')">
-
                     <img src="photo3.jpg" alt="Memory 3" class="polaroid-img">
-
-                    <div class="caption">
-                        त्यो विशेष पल ❤️
-                    </div>
-
+                    <div class="caption">त्यो विशेष पल ❤️</div>
                 </div>
-
-                <p>
-                    कहिलेकाहीँ म तपाईंको कुरा
-                    नमाने पनि, तपाईंले मेरो लागि
-                    सधैं राम्रो सोचिरहनुभएको हुन्छ।
-                </p>
-
+                <p>कहिलेकाहीँ म तपाईंको कुरा नमाने पनि, तपाईंले मेरो लागि सधैं राम्रो सोचिरहनुभएको हुन्छ।</p>
             </section>
-
 
             <!-- PHOTO 4 -->
-
             <section class="memory reveal">
-
                 <div class="polaroid" onclick="openModal('photo4.jpg', 'एउटा अमूल्य पल ❤️', 'तपाईं मेरो लागि केवल बुबा मात्र होइन, मेरो जीवनको सबैभन्दा ठूलो प्रेरणा हुनुहुन्छ।')">
-
                     <img src="photo4.jpg" alt="Memory 4" class="polaroid-img">
-
-                    <div class="caption">
-                        एउटा अमूल्य पल ❤️
-                    </div>
-
+                    <div class="caption">एउटा अमूल्य पल ❤️</div>
                 </div>
-
-                <p>
-                    तपाईं मेरो लागि केवल बुबा मात्र होइन,
-                    मेरो जीवनको सबैभन्दा ठूलो प्रेरणा
-                    हुनुहुन्छ।
-                </p>
-
+                <p>तपाईं मेरो लागि केवल बुबा मात्र होइन, मेरो जीवनको सबैभन्दा ठूलो प्रेरणा हुनुहुन्छ।</p>
             </section>
-
 
             <!-- PHOTO 5 -->
-
             <section class="memory reveal">
-
                 <div class="polaroid tilted-left" onclick="openModal('photo5.jpg', 'सधैं सम्झिरहने पल ❤️', 'तपाईंले मलाई दिएको माया, साथ र हौसलाको कुनै मूल्य छैन।')">
-
                     <img src="photo5.jpg" alt="Memory 5" class="polaroid-img">
-
-                    <div class="caption">
-                        सधैं सम्झिरहने पल ❤️
-                    </div>
-
+                    <div class="caption">सधैं सम्झिरहने पल ❤️</div>
                 </div>
-
-                <p>
-                    तपाईंले मलाई दिएको माया,
-                    साथ र हौसलाको कुनै मूल्य छैन।
-                </p>
-
+                <p>तपाईंले मलाई दिएको माया, साथ र हौसलाको कुनै मूल्य छैन।</p>
             </section>
-
 
             <!-- PHOTO 6 -->
-
             <section class="memory reveal">
-
                 <div class="polaroid tilted-right" onclick="openModal('photo6.jpg', 'विशेष क्षण ❤️', 'तपाईंको सपनाहरू पुरा गर्न म सधैं सच्चा प्रयास गरिरहनेछु।')">
-
                     <img src="photo6.jpg" alt="Memory 6" class="polaroid-img">
-
-                    <div class="caption">
-                        विशेष क्षण ❤️
-                    </div>
-
+                    <div class="caption">विशेष क्षण ❤️</div>
                 </div>
-
-                <p>
-                    तपाईंको सपनाहरू पुरा गर्न म सधैं
-                    सच्चा प्रयास गरिरहनेछु।
-                </p>
-
+                <p>तपाईंको सपनाहरू पुरा गर्न म सधैं सच्चा प्रयास गरिरहनेछु।</p>
             </section>
-
 
             <!-- FINAL MESSAGE -->
-
             <section class="final-card reveal">
-
-                <div class="final-heart">
-                    ❤️
-                </div>
-
-                <h2>
-                    बुबा...
-                </h2>
-
-                <p>
-                    म तपाईंलाई शब्दमा बयान गर्न
-                    नसक्ने गरी धेरै माया गर्छु।
-                </p>
-
-                <p>
-                    तपाईं सधैं स्वस्थ, खुसी र
-                    मुस्कुराइरहनुहोस्।
-                </p>
-
-                <div class="final-title">
-                    Happy Father's Day, Dad! ❤️
-                </div>
-
-                <div class="signature">
-                    तपाईंको छोराबाट ❤️
-                </div>
-
+                <div class="final-heart">❤️</div>
+                <h2>बुबा...</h2>
+                <p>म तपाईंलाई शब्दमा बयान गर्न नसक्ने गरी धेरै माया गर्छु।</p>
+                <p>तपाईं सधैं स्वस्थ, खुसी र मुस्कुराइरहनुहोस्।</p>
+                <div class="final-title">Happy Father's Day, Dad! ❤️</div>
+                <div class="signature">तपाईंको छोराबाट ❤️</div>
             </section>
-
         </div>
-
     </section>
 
     <!-- PHOTO MODAL POPUP -->
@@ -269,114 +127,42 @@
         </div>
     </div>
 
-
     <script>
-
-        function createBurst() {
-
-            const symbols = ["❤️", "♡", "✦", "✧", "✨"];
-
-            for (let i = 20; i > 0; i--) {
-
-                const particle = document.createElement("span");
-
-                particle.className = "burst-particle";
-
-                particle.textContent =
-                    symbols[Math.floor(Math.random() * symbols.length)];
-
-                particle.style.setProperty(
-                    "--x",
-                    (Math.random() * 320 - 160) + "px"
-                );
-
-                particle.style.setProperty(
-                    "--y",
-                    (Math.random() * 260 - 130) + "px"
-                );
-
-                particle.style.setProperty(
-                    "--r",
-                    (Math.random() * 240 - 120) + "deg"
-                );
-
-                document.body.appendChild(particle);
-
-                setTimeout(function () {
-                    particle.remove();
-                }, 1000);
-            }
-        }
-
-
+        // THIS SCRIPT MUST BE PRESENT AND COMPLETE
+        
         function openSurprise() {
-
-            const opening =
-                document.getElementById("openingScreen");
-
-            const page =
-                document.getElementById("surprisePage");
-
-            const button =
-                document.getElementById("surpriseButton");
-
+            const opening = document.getElementById("openingScreen");
+            const page = document.getElementById("surprisePage");
+            const button = document.getElementById("surpriseButton");
             button.classList.add("clicked");
-
             createBurst();
-
             setTimeout(function () {
                 opening.classList.add("hide");
             }, 150);
-
             setTimeout(function () {
-
                 opening.style.display = "none";
-
                 page.classList.add("show");
-
-                window.scrollTo({
-                    top: 0,
-                    left: 0
-                });
-
+                window.scrollTo({ top: 0, left: 0 });
             }, 700);
         }
 
+        function createBurst() {
+            const symbols = ["❤️", "♡", "✦", "✧", "✨"];
+            for (let i = 20; i > 0; i--) {
+                const particle = document.createElement("span");
+                particle.className = "burst-particle";
+                particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                particle.style.setProperty("--x", (Math.random() * 320 - 160) + "px");
+                particle.style.setProperty("--y", (Math.random() * 260 - 130) + "px");
+                particle.style.setProperty("--r", (Math.random() * 240 - 120) + "deg");
+                document.body.appendChild(particle);
+                setTimeout(function () { particle.remove(); }, 1000);
+            }
+        }
 
-        /* SCROLL REVEAL */
-
-        const revealItems =
-            document.querySelectorAll(".reveal");
-
-        const observer =
-            new IntersectionObserver(
-                function(entries) {
-
-                    entries.forEach(function(entry) {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add("visible");
-
-                            observer.unobserve(entry.target);
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
-
-        revealItems.forEach(function(item) {
-            observer.observe(item);
-        });
-
-        /* MODAL POPUP FUNCTIONS */
-
+        // MODAL POPUP FUNCTIONS
         function openModal(imageSrc, captionText, descriptionText) {
+            console.log("Opening modal for:", imageSrc); // Check browser console for this
             document.getElementById("modalImage").src = imageSrc;
             document.getElementById("modalCaption").innerText = captionText;
             document.getElementById("modalText").innerText = descriptionText;
@@ -387,7 +173,17 @@
             document.getElementById("photoModal").classList.remove("active");
         }
 
+        // SCROLL REVEAL
+        const revealItems = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        revealItems.forEach(function(item) { observer.observe(item); });
     </script>
-
 </body>
 </html>
